@@ -1,19 +1,6 @@
 body, html {
+  height: 100%;
   background-color:white
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 1);
-  top: 0;
-  width: 100%;
-}
-
-li {
-  float: left;
 }
 
 li a {
@@ -46,7 +33,7 @@ li a:hover:not(.active) {
   background-image: url('images/SolarSystemPlaceholder.jpg');
 
   /* Set a specific height */
-  min-height: 250px;
+  height: 50%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;

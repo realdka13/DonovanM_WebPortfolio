@@ -1,3 +1,7 @@
+body, html {
+  background-color:white
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -24,20 +28,25 @@ li a:hover:not(.active) {
   background-color: #111;
 }
 
+/* Highlighting the active button */
 .active {
   background-color: #757575;
 }
 
-body, html {
-  height: 100%;
-  background-color:black
+/* Portfolio columns */
+.column {
+  float: left;
+  margin: 1.665%;
+  width: 30%;
 }
+
+/* Parallax Effect */
 .parallax {
   /* The image used */
   background-image: url('images/SolarSystemPlaceholder.jpg');
 
-  /* Full height */
-  height: 100%; 
+  /* Set a specific height */
+  min-height: 250px;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;

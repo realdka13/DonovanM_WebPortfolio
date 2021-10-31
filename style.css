@@ -27,6 +27,12 @@ li a:hover:not(.active) {
   width: 30%;
 }
 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* Parallax Effect */
 .parallax {
   /* The image used */

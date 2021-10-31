@@ -32,25 +32,3 @@ li a:hover:not(.active) {
   display: table;
   clear: both;
 }
-
-/* Parallax Effect */
-.parallax {
-  /* The image used */
-  background-image: url('images/SolarSystemPlaceholder.jpg');
-
-  /* Set a specific height */
-  height: 50%;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
-}

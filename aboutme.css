@@ -7,8 +7,10 @@
 }
 
 .headerbox{
-    background-color: chartreuse;
+    background-color: #088474;
     text-align: center;
+    margin: 0;
+    padding: 1px 0px 1px 0px;
 }
 
 .center {

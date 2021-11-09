@@ -259,6 +259,10 @@ h1,h2,h3,h4,h5
         padding: 15px 0;
 		color: #D43F52;
     }
+#about h2
+    {
+        text-align: center;
+    }
 #about .progress
     {
         border-radius: 4px;

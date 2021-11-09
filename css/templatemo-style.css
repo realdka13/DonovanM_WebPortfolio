@@ -327,6 +327,11 @@ h1,h2,h3,h4,h5
 
 /* start contact */
 
+#contact
+    {
+      background-color: #1a1a1a;
+    }
+
 #contact address
     {
       padding-bottom: 18px;
@@ -381,10 +386,10 @@ h1,h2,h3,h4,h5
 /* start footer */
 footer
     {
-        border-top: 1px solid #090909;
         text-align: center;
         padding-top: 40px;
         padding-bottom: 20px;
+        background-color: #1a1a1a;
     }
 footer hr
     {

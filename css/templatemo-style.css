@@ -263,16 +263,6 @@ h1,h2,h3,h4,h5
     {
         text-align: center;
     }
-#about .progress
-    {
-        border-radius: 4px;
-        background: #ffffff;
-        height: 4px;
-    }
-#about .progress .progress-bar-danger
-    {
-        background: #D43F52;
-    }
 #about .text-top
     {
         padding-top: 50px;

@@ -216,20 +216,22 @@ h1,h2,h3,h4,h5
     {
         background: #1a1a1a;
     }
-#work h2
-    {
-        text-align: center;
-    }
 #work h4
     {
-        padding: 15px 0;
-		color: #D43F52;
+        padding: 15px 0px 0px 0px;
+	color: #D43F52;
+	margin-bottom:5px;
+    }
+#work h3
+    {
+	font-size:15px;
+	padding:0px 0px 15px 0px;
+	margin: 0px 0px 0px 0px;
     }
 #work .media
     {
       margin-top: 30px;
     }
-	
 #work .media .fa
     {
         border: 2px solid #ffffff;
@@ -260,8 +262,16 @@ h1,h2,h3,h4,h5
 /* start about */
 #about h4
     {
-        padding: 15px 0;
-		color: #D43F52;
+        padding: 15px 0px 0px 0px;
+	color: #D43F52;
+	margin-bottom:5px;
+    }
+#about h3
+    {
+	font-size:15px;
+	padding:0px 0px 15px 0px;
+	margin: 0px 0px 0px 0px;
+	
     }
 #about h2
     {

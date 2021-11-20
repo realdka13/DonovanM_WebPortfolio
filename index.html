@@ -28,7 +28,6 @@
 		<link rel="stylesheet" href="css/jquery.fullPage.css">
 		<!-- custom -->
 		<link rel="stylesheet" href="css/templatemo-style.css">
-
 	</head>
 	<body>
 
@@ -44,7 +43,7 @@
 						<h4>Bachelor of Computer Engineering - University of Minnesota Twin Cities</h4>
 						<h4>GPA: 3.86</h4>
 						<h4 style="font-size:11px;">*Expected Fall 2024</h4>
-						<h2 class="rotate" style="margin-top:30px">Computer Engineering Student, Space Enthusiast, Some Other Thing</h2>
+						<h2 class="rotate" style="margin-top:30px">Computer Engineering Student, Space Enthusiast, FIRST Robotics Alumni</h2>
 						<p>Hard working student with a passion for learning new things and striving to utilize my skills pushing the boundaries of space exploration for the betterment of our species. I also find it important to encourage others, especially minorities, to get involved STEM fields by doing things like promoting FIRST Robotics and participating projects that will show off how much fun hard work really is!</p>
 						<p>As a child I've always had an interest in space, learning about the stars, planets, and just the vastness has always amazed me. As I got older I learned more about our history in space such as the Mercury, Gemini, and of course, the Apollo programs. These programs, combined with the amazing experience of FIRST Robotics brought me into the College of Science and Engineering studying Computer Engineering.</p>
 						<p>On February 6th, 2018, SpaceX launched a Tesla Roadster into space as a test flight for their newest rocket, the Falcon Heavy. This was the very first launch livestream that I have ever watched, and immediately knew I wanted to be involved in advancing spaceflight! Since then I have been learning everything I can about anything related to rockets, while continuing my Computer Engineering degree.</p>
@@ -196,39 +195,38 @@
 		<!-- start skills -->
 		<div id="about" class="section">
 			<div class="container">
-				<h1 style="font-size:15px;text-align:center;color:green;">TODO: Show how I've used each thing with a popup; Make more responsive</h1>
 				<div class="col-md-12 wow bounce">
 					<h2>Skills</h2>
 				</div>
+				<p style="text-align:center">Click the skill to learn more about it!</p>
 				<div style="margin:auto;text-align:center;max-width:500px">
 					<div class="col-md-6 col-xs-11 wow fadeInLeft"; data-wow-delay="0.9s";>
-						<h4>CAD</h4>
-						<p>Altium</p>
-						<p>KiCAD</p>
-						<p>Fusion 360</p>
-						<p>Solidworks</p>
+						<h4><u>CAD</u></h4>
+						<button type="button" class="collapsible arrow">Altium</button><div class="content"><progress value="65" max="100"></progress><p>Utilized with the 555 Oscillator project and on rocket team avionics.</p></div>
+						<button type="button" class="collapsible arrow">KiCad</button><div class="content"><progress value="30" max="100"></progress><p>Used to learn PCB designing for the first time with the Up Counter project.</p></div>
+						<button type="button" class="collapsible arrow">Fusion 360</button><div class="content"><progress value="70" max="100"></progress><p>Used for the creation of the Soyuz and Electron 3D models, as well as other minor 3D printing projects.</p></div>
+						<button type="button" class="collapsible arrow">Solidworks</button><div class="content"><progress value="20" max="100"></progress><p>A tool used by the rocket team. I have little experiences, however the team held a class designing a nosecone.</p></div>
 
-						<h4>Equipment</h4>
+						<h4><u>Equipment</u></h4>
 						<p>Oscilloscope</p>
 						<p>Function Generator</p>
 						<p>3D Printer</p>
 						<p>Multimeter</p>
 
-						<h4>Microsoft Office</h4>
+						<h4><u>Microsoft Office</u></h4>
 						<p>Word</p>
 						<p>Excel</p>
 						<p>PowerPoint</p>
 					</div>
 					<div class="col-md-6 col-xs-11 wow fadeInLeft"; data-wow-delay="0.9s";>
-						<h4>Programming</h4>
+						<h4><u>Programming</u></h4>
 						<p>C++</p>
 						<p>Verilog</p>
 						<p>Python</p>
-						<p>C</p>
 						<p>PowerShell</p>
 						<p>Bash</p>
 
-						<h4>Other Software</h4>
+						<h4><u>Other Software</u></h4>
 						<p>Vivado</p>
 						<p>LT Spice</p>
 						<p>Open Rocket</p>
@@ -286,7 +284,23 @@
 		<!-- end footer -->
 
 	</div>
+		<!-- skill dropdowns -->
+		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
 
+			for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+ 			   this.classList.toggle("active");
+ 			   var content = this.nextElementSibling;
+ 			   if (content.style.maxHeight){
+ 			     content.style.maxHeight = null;
+  			  } else {
+ 			     content.style.maxHeight = content.scrollHeight + "px";
+ 			   }
+ 			 });
+			}
+		</script>
 		<!-- jQuery -->
 		<script src="js/jquery.js"></script>
 		<!-- bootstrap -->

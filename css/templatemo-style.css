@@ -220,13 +220,15 @@ h1,h2,h3,h4,h5
     {
         padding: 15px 0px 0px 0px;
 	color: #D43F52;
-	margin-bottom:5px;
+	margin-bottom:10px;
+	font-size:22px
     }
 #work h3
     {
 	font-size:15px;
 	padding:0px 0px 15px 0px;
 	margin: 0px 0px 0px 0px;
+	
     }
 #work h2
     {
@@ -264,11 +266,34 @@ h1,h2,h3,h4,h5
 /* end work */
 
 /* start about */
+#about progress[value]
+    {
+	-webkit-appearance: none;
+        appearance: none;
+	margin-bottom:10px;
+    }
+#about .collapsible
+    {
+	background-color: transparent;
+	border:hidden;
+	margin-bottom:10px;
+	color:white;
+    }
+#about .content 
+    {
+ 	background-color: transparent;
+ 	max-height: 0;
+ 	overflow: hidden;
+ 	transition: max-height 0.2s ease-out;
+	font-size:13px;
+	font-style: italic;
+    }
 #about h4
     {
         padding: 15px 0px 0px 0px;
 	color: #D43F52;
-	margin-bottom:5px;
+	margin-bottom:10px;
+	font-size:22px
     }
 #about h3
     {

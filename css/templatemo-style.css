@@ -194,6 +194,17 @@ h1,h2,h3,h4,h5
 #home h2
     {
         padding-bottom: 5px;
+        text-shadow: 1px 1px 2px #000000;
+        color:white;
+    }
+#home h4
+    {
+        text-shadow: 1px 1px 2px #000000;
+    }
+#home p
+    {
+        text-shadow: 1px 1px 2px #000000;
+        color:white;
     }
 #home .btn
     {
@@ -225,7 +236,7 @@ h1,h2,h3,h4,h5
         padding: 15px 0px 0px 0px;
 	    color: #cc8563;
 	    margin-bottom:10px;
-	    font-size:22px
+	    font-size:22px;
     }
 #work h3
     {

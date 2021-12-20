@@ -85,7 +85,7 @@
 					The final design takes in between a 6-18V (although higher voltage is not reccomended, as a cooling solution was not built in) supply which is then regulated down to 5V.
 					There is a diode in place for reverse polarity protection. The board will output a 5V clock, as well as its inverse. The clock can either be from the 555 in astable configuration
 					or in monostable configuration. This means that its possible to get an automatic clock, up to about 510 hz, or a manual clock from a debounced momentary switch.
-					The astable clock frequency is adjustable using a 1MΩ logarithmic potentiometer. Altogether the cost is about $10 USD per board, although parts were mostly bought individually rather than in bulk,
+					The astable clock frequency is adjustable using a 1MΩ logarithmic potentiometer. The bottom layer is also a ground plane, which is a large improvement over the previoous PCB. Altogether the cost is about $10 USD per board, although parts were mostly bought individually rather than in bulk,
 					making it a bit more expensive.
 				</p>
 				<figure>
@@ -127,8 +127,7 @@
 						this small ratio makes the charge and discharge time of the capacitor essentially the same. So at a slow clock the duty cycle is right around 50%. However as the clock speeds up, the ratio
 						from R2R3 and R1 gets much close to 1. Making the worst difference in duty cycle. In my case it ends up being about 66% of the time on, 34% of the time off. Counterintuitively, its spends more time on,
 						but an easy was to think about it is that its got a really fast discharge, so as soon as a discharge is triggered, it drops to 0V rapidly, it slowly charges back up and ends up spending a lot of time in that charging state,
-						especially since capacitors charge slower as they gain charge.
-
+						especially since capacitors charge slower as they gain charge. The one thing I would do differently on future PCB's would be to how a power plane on the top layer, instead of just a ground plane on the bottom layer.
 					</p>
 					<figure>
 						<img src="../images/FinalWaveform.png" style="width:600px;height:360px;" alt="Output waveform of PCb<" class="center">

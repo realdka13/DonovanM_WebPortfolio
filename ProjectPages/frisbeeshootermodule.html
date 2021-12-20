@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 
 		<title>Donovan Magney - Computer Engineering Student</title>
-		<meta name="description" content="Breadboard Computer project details">
+		<meta name="description" content="Gear Scoop Robot Modules Details">
         <meta name="author" content="Donovan Magney">
         <!-- 
         Lavish HTML CSS Template
@@ -34,14 +34,14 @@
 
 		<div id="fullpage">
 			<!-- start home -->
-			<div id="home" class="section breadboardcomputer-bg">
+			<div id="home" class="section frisbeeshootermodule-bg">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-2"></div>
 						<div class="col-md-8 wow fadeIn" data-wow-delay="0.0s">
-							<h1>8-Bit Breadboard Computer</h1>
+							<h1>Frisbee Shooter Robot Module</h1>
 							<h3>Objective</h3>
-							<p>To gain an understanding of the basic functions on a Central Processing Unit</p>
+							<p>To design and build a module to shoot frisbees accurately and consistently into the goals</p>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
@@ -57,13 +57,20 @@
 				</div>
 				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
 				<p>
-					The 8-bit breadboard computer is a Ben Eater inspired project to study basic functions of a CPU. This project will also serve to bridge the gap between using ICs (integrated  
-					circuits) on their own performing their own functions, to combining them together to accomplish a much bigger task. There are only 2 major constraints to the project.  
-					Constructing it on a breadboard, which is essential to allow easy modifications for fixing mistakes or hardware bugs. And slow clock, about 1-3hz to allow easier debugging of code.
+					The 2013 FIRST Robotics competition “Ultimate
+					Ascent” required teams to build robots to score points
+					by shooting frisbees into 3 different goals and climb a
+					pyramid. Each level climbed on the pyramid being
+					worth more points. Frisbees could be put into play by
+					“feeder stations” in the corner of the field with slots to
+					drop the frisbees through. Initially my team decided to
+					pursue a pyramid climbing robot. We struggled to get a
+					working prototype and we shifted to a frisbee shooter
+					instead.
 				</p>
 				<figure>
-					<img src="../images/completedbreadboardcomputer.jpg" style="width:650px;height:487.5px;" alt="Completed breadboard computer" class="center">
-					<figcaption class="caption">Completed computer</figcaption>
+					<img src="../images/Goals.jpg" style="width:650px;height:487.5px;" alt="High goals" class="center">
+					<figcaption class="caption">High goals</figcaption>
 				</figure>
 				</div>
 			</div>
@@ -77,24 +84,18 @@
 					<h2>Final Product</h2>
 				</div>
 				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-				<p>The computer took approximately a week to construct. The final product includes:</p>
-				<ul>
-					<li>Variable astable 1 – 300 hz clock with the option for a button triggered monostable clock.</li>
-					<li>16 bytes of random access memory (RAM)</li>
-					<li>3kBs of read only memory (ROM)</li>
-					<li>4-bit program counter</li>
-					<li>An arithmetic logic unit (ALU) that is capable of 8-bit addition and subtraction</li>
-					<li>A 3 digit 7 segment output display with the ability to display in either signed or unsigned digits</li>
-				</ul>
 				<p>
-					Also added (not shown) is an Arduino Nano connected to the RAM module which programmed
-					the RAM on power up while the computer is in programming mode, first by writing to every memory address, then verifying by reading each address. After programming, the Arduino would flash an
-					LED to indicate completion and slowly cycle through each address to allow for human verification until the computer was switched to run mode.
-					The clock can then be started to run the program and a halt is triggered at the end of the program.
+					The final shooter is gravity fed and could hold 4
+					frisbees (the game limit) at any given time. The next
+					frisbee to be shot is pushed forward into a spinning wheel by a pneumatic piston. The spinning wheel propels
+					the frisbee forward while simultaneously imparting spin by the friction of the frisbee against the wall of the
+					shooter. The robot could unload 4 frisbees in about 5 seconds. It then returns to the feeder station to reload. To
+					assist in this, a plate was added to the front of the shooter to fill the gap between the edge of the shooter and
+					the station caused by the robot bumpers.
 				</p>
 				<figure>
-					<img src="../images/postprogrambreadboardcomputer.png" style="width:650px;height:487.5px;" alt="Computer after running program '10 + 20 - 5'" class="center">
-					<figcaption class="caption">Computer after running program '10 + 20 - 5'</figcaption>
+					<img src="../images/RobotFinal.jpg" style="width:487.5px;height:650px;" alt="Completed module" class="center">
+					<figcaption class="caption">Completed module</figcaption>
 				</figure>
 				</div>
 			</div>
@@ -109,11 +110,16 @@
 				</div>
 				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
 					<p>
-						This project was successful in completing the objective. I learned how to construct a basic CPU using bus architecture and all the require modules needed to accomplish it.
-						This project also gave lots of experience in being able to select logic integrated circuits (IC), and combining them to collectively perform any task, then being able to write custom assembly code to give it a
-						basic instruction set. However, the breadboards caused power issue at this scale due to their high resistance, which caused a few bugs along the way with ICs not being powered properly.
-						Future large scale breadboard projects wwould involve soldering each module to at least a perfboard as they are completed.  
+						For its ability to shoot accurately and consistently, the project completed its goal. Missed shots were almost
+						always a result of driver error, rather than machine. Its main flaw is the speed. A “fast” robot could unload 4
+						frisbees in 2-3 seconds, while ours took around 5. The loading mechanism is what slowed the process while it
+						waits both for gravity to feed the frisbee and the piston to reset. Our accurate robot was paired with 2 speed
+						robots, and this made a 1st place alliance.
 					</p>
+					<figure>
+						<img src="../images/FrisbeeActionShot.jpg" style="width:650px;height:487.5px;" alt="The robot shooting frisbees into the goal" class="center">
+						<figcaption class="caption">The robot shooting frisbees into the goal</figcaption>
+					</figure>
 				</div>
 			</div>
 		</div>

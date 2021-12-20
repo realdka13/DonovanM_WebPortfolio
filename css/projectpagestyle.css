@@ -165,6 +165,7 @@ h1,h2,h3,h4,h5
 /* end simpletextrotator */
 
 /* start home */  
+
 .flightcomputer-bg
 {
     background: url('../images/Flight_Computer_v1.jpg');
@@ -173,6 +174,14 @@ h1,h2,h3,h4,h5
 {
     background: url('../images/Breadboard_Computer.jpg');
 }
+.fffoscillator-bg
+{
+    background: url('../images/555OscillatorPCB.jpg');
+}
+.spacesim-bg
+{
+    background: url('../images/SpaceSim.PNG');
+}
 .soyuzandelectron-bg
 {
     background: url('../images/Rocket_Prints.jpg');
@@ -180,6 +189,10 @@ h1,h2,h3,h4,h5
 .pcbcounter-bg
 {
     background: url('../images/PCBCounter.PNG');
+}
+.blockbreaker-bg
+{
+    background: url('../images/BlockBreakerMenu.PNG');
 }
 .frisbeeshootermodule-bg
 {

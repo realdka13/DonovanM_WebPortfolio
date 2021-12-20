@@ -42,7 +42,7 @@
 							<h1>Solar System Game/Simulation</h1>
 							<h3>*WORK IN PROGRESS*</h3>
 							<h3>Objective</h3>
-							<p>Lorem Ipsum</p>
+							<p>Practice and improve programming skills by creating a solar system game/simualtion.</p>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
@@ -58,12 +58,17 @@
 				</div>
 				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
 				<p>
-					Lorem Ipsum
+					Most of my projects have a relatively small coding aspect to them. Not giving me a big opportunity to enhance my coding skills.
+					Games are a great way to practice and improve coding skills in an engaging way. Given the theme of this site, if I'm going to make a game it's has to be space themed of course.
+					The primary skill I want to learn is applying real world math to this game. There are a couple ways I'm looking at going about this:
+					<ul>
+						<li>Use Newtons gravity equation</li>
+						<li>Use Keplarian Orbit concepts for objects I would like to be in a more rigid orbit</li>
+						<li>Apply geometry to procedurally generate landable bodies</li>
+					</ul>
+					I will be using the Unity Game Engine and C# to accomplish this. As of now, these are the applications I would like to focus on to get me started. I would also like to minimize the use of borrowed code,
+					at least to the point where I dont understand whats its doing. I find it acceptable to borrow code if I am able to go through and explain it.
 				</p>
-				<figure>
-					<img src="../images/Goals.jpg" style="width:650px;height:487.5px;" alt="High goals" class="center">
-					<figcaption class="caption">High goals</figcaption>
-				</figure>
 				</div>
 			</div>
 		</div>
@@ -73,15 +78,53 @@
 		<div id="finalproduct" class="section">
 			<div class="container">
 				<div class="col-md-12 wow">
-					<h2>Final Product</h2>
+					<h2>Progress</h2>
 				</div>
 				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
+				<h4>Newtonian Orbits</h4>
 				<p>
-					Lorem Ipsum
+					Newtons gravity is an easy place to start. All I need are a couple of bodies with a mass value, the distance between their centers, and a gravity constant.
+					It starts with a master script which at the start, will find all of the bodies on screen and store them in an object array. Each frame, it will then pass on this object array
+					to each body and tell the body to calculate the total force acting upon it, calculate its new acceleration, then velocity, then finally move itself to
+					the proper position from that velocity. The objects now will move, but its difficult to place them in an orbit without some debug lines that will show their future paths.
+					I downloaded a script from Sebastian Lague (on YouTube) to display the path of the bodies in the editor. That was pretty much it for this portion.
+					The code for this part of the project can be found <a href="https://github.com/realdka13/SpaceSim/tree/main/Space_Sim/Space_Sim/Assets/Scripts/Newtons%20Gravitation" target="__blank">here</a>.
+					The code is heavily borrowed from Sebastion, although edits have been made for my use case.
+					After implementing this, I notice that when placing small bodies around a much larger one that is not moving, they end up spiraling in the direction normal to the orbit.
+					This of course in analogous to what happens in real life, nothing is completely still, our sun moves as well and the orbits follow.
 				</p>
 				<figure>
-					<img src="../images/RobotFinal.jpg" style="width:487.5px;height:650px;" alt="Completed module" class="center">
-					<figcaption class="caption">Completed module</figcaption>
+					<img src="../images/NewtonsGravDemo.PNG" style="width:650px;height:487.5px;" alt="Newtons Gravity demonstration with orbit lines" class="center">
+					<figcaption class="caption">Newtons Gravity demonstration with orbit lines</figcaption>
+				</figure>
+				<h4>Keplarian Orbits</h4>
+				<p>
+					The problem with making a game strictly with Newtons Gravity is that over time, they will slowly drift away and are unredictable in a game sense. Something could happen in the game
+					or the player plays so long that the drift may start being a problem. In <i>Kerbal Space Program</i>, they place all of their bodys on "rails", or predefined paths to avoid the previously mentioned issues.
+					My method for this was to use Keplarian parameters to define an orbit. This also makes it really easy to change orbits to whatver I like at anytime. This is less realistic however, as it
+					only creates eliiptical orbits and does not take other bodies into account, or have the spiraling I mentioned earlier. But its exactly why I need it. The script also draws orbit lines like previously, but its much easier
+					since the body will always follow the same path relative to its reference body. Because of this, I was able to make optimizations by only calculating values that have changed since the previous frame.
+					This <a href="https://github.com/realdka13/SpaceSim/tree/main/Space_Sim/Space_Sim/Assets/Scripts/Ellipse%20Orbits" target="__blank">code </a>
+					was a bit more complicated, but mostly due to the math involved. 
+					<br>
+
+				</p>
+				<figure>
+					<img src="../images/KelplarianOrbitDemo.PNG" style="width:738.5px;height:392px;" alt="Keplarian Orbit demonstration with adjustable parameters" class="center">
+					<figcaption class="caption">Keplarian Orbit demonstration with adjustable parameters</figcaption>
+				</figure>
+				<h4>Procedural Planets Version 1</h4>
+				<p>
+					The next step is to make some actual planet looking objects instead of just spheres or cyclinders. I have never done any mesh generation before, so this step was just me strictly following
+					tutorials online for procedural planets. The result can be seen below. Like with Keplarian orbits, there are lots of values that can be changed, including the colors, to make a unique planet.
+					However there are multiple problems with the current state of these planets. First is they are very low detail planets, and are really only good for looking at at a distance. Next, the code has scalability issues.
+					It does not allow for many different planets, or even other things such as asterids. The 3 planets shown all have a the same terrain pattern on them for example, and the planets have to have an "ocean" layer as well, which of course many planets don't have.
+					Finally, while I typed it on my keyboard, the code is only borrowed code, which breaks my first constraint. But this was an important step for learning mesh generation and how to modify that mesh, especially on a sphere,
+					so it was by no means a waste.
+				</p>
+				<figure>
+					<img src="../images/PlanetGenDemo.PNG" style="width:794.5px;height:383px;" alt="Eath like, Mars like, and Ceres like procedural planets demonstration with adjustable noise parameters" class="center">
+					<figcaption class="caption">Eath like, Mars like, and Ceres like procedural planets demonstration with adjustable noise parameters</figcaption>
 				</figure>
 				</div>
 			</div>
@@ -92,16 +135,14 @@
 		<div id="conclusion" class="section">
 			<div class="container">
 				<div class="col-md-12 wow">
-					<h2>Conclusion</h2>
+					<h2>Next Steps</h2>
 				</div>
 				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
 					<p>
-						Lorem Ipsum
+						The next clear step is to work on version 2 of procedural planets. The next cersion must alow for much more unique objects, and work for a future player to land on. A proper player controller is also going to be coming in the near future to
+						allow exploration of the new planets and to be able to tweak the solar system so that it looks and runs well from a player perspective.
+						The solar system should be able to be built out in more detail after that.
 					</p>
-					<figure>
-						<img src="../images/FrisbeeActionShot.jpg" style="width:650px;height:487.5px;" alt="The robot shooting frisbees into the goal" class="center">
-						<figcaption class="caption">The robot shooting frisbees into the goal</figcaption>
-					</figure>
 				</div>
 			</div>
 		</div>

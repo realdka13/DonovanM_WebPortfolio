@@ -173,6 +173,10 @@ h1,h2,h3,h4,h5
 {
     background: url('../images/Breadboard_Computer.jpg');
 }
+.soyuzandelectron-bg
+{
+    background: url('../images/Rocket_Prints.jpg');
+}
 .pcbcounter-bg
 {
     background: url('../images/PCBCounter.PNG');

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Donovan Magney - Computer Engineering Student</title>
+		<meta name="description" content="Gear Scoop Robot Modules Details">
+        <meta name="author" content="Donovan Magney">
+        <!-- 
+        Lavish HTML CSS Template
+        https://templatemo.com/tm-458-lavish
+        -->
+        
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- animate -->
+		<link rel="stylesheet" href="../css/animate.min.css">
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<!-- font-awesome -->
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<!-- google font -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
+		<!-- fullpage -->
+		<link rel="stylesheet" href="../css/jquery.fullPage.css">
+		<!-- custom -->
+		<link rel="stylesheet" href="../css/projectpagestyle.css">
+	</head>
+	<body>
+
+	<div id="fullpage">
+
+		<div id="fullpage">
+			<!-- start home -->
+			<div id="home" class="section pcbcounter-bg">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8 wow fadeIn" data-wow-delay="0.0s">
+							<h1>Printed Circuit Board Counter</h1>
+							<h3>Objective</h3>
+							<p>To learn ECAD design and manufacture my first printed circuit board</p>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+				</div>
+			</div>
+			<!-- end home -->
+
+		<!-- start overview -->
+		<div id="overview" class="section">
+			<div class="container">
+				<div class="col-md-12 wow">
+					<h2>Overview</h2>
+				</div>
+				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
+				<p>
+					I have made many breadboard circuits and converted a few to perfboard circuits, but breadboards are
+					prototyping tools and perfboard circuits are not the most compact. Before this project, I have never used an
+					electrical computer aided design (ECAD) software or soldered surface mounted components. An easy circuit was
+					chosen to keep the focus on the ECAD design and soldering instead of troubleshooting a circuit. The circuit
+					chosen is 4-bit counter counting from 0 – 15 and displaying on both LEDs, and in hex on a 7-segment display.
+				</p>
+				<figure>
+					<img src="../images/CounterSchematic.PNG" style="width:716.5px;height:238.5px;" alt="Counter schematic" class="center">
+					<figcaption class="caption">Counter schematic</figcaption>
+				</figure>
+				</div>
+			</div>
+		</div>
+		<!-- end overview -->
+
+		<!-- start finalproduct -->
+		<div id="finalproduct" class="section">
+			<div class="container">
+				<div class="col-md-12 wow">
+					<h2>Final Product</h2>
+				</div>
+				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
+				<p>
+					The final product is a 2 later PCB featuring a CD74HC190 4-bit binary counter with 4 LEDs to view the output
+					directly. The counter output is also routed to a SN74LS48N BCD to Seven Segment decoder which is then hooked
+					up to a 7-segment display. A 3-pin screw terminal provides 5v power and a clock from a separate source. The
+					counting speed is determined by the frequency of the supplied clock, ideally being 1 – 3 hz. All components are
+					through hole except for the resistors. 7 jumper wires were required due to a design flaw on the board, which left
+					some unconnected traces.
+				</p>
+				<figure>
+					<img src="../images/PCBSideBySide.jpg" style="width:650px;height:487.5px;" alt="Side by side comparison of soldered and unsoldered PCB" class="center">
+					<figcaption class="caption">Side by side comparison of soldered and unsoldered PCB</figcaption>
+				</figure>
+				</div>
+			</div>
+		</div>
+		<!-- end finalproduct -->
+
+		<!-- start conclusion -->
+		<div id="conclusion" class="section">
+			<div class="container">
+				<div class="col-md-12 wow">
+					<h2>Conclusion</h2>
+				</div>
+				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
+					<p>
+						This project completed the objective, although not without a few mistakes. First, the ICs were soldered directly
+						to the PCB. This is an issue as it makes it very difficult to replace a faulty IC, whether faulty from the factory or
+						overheated when soldering. For future PCBs, if using DIP (dual in-line package) ICs, an IC socket should be
+						soldered in that location and the IC placed inside the socket. Second, due to a misunderstanding of trace routing
+						on 2-layer boards, a total of 7 pads were left unconnected. This could have been avoided by properly utilizing a
+						design rule check, which was also missed. Future projects will follow stricter procedures as well as utilize a
+						ground plane.
+					</p>
+					<figure>
+						<img src="../images/PCBwithflaw.PNG" style="width:650px;height:487.5px;" alt="PCB counter with unconnected pads highlighted" class="center">
+						<figcaption class="caption">PCB counter with unconnected pads highlighted</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+		<!-- end conclusuon -->
+
+		<!-- start footer -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow fadeIn" data-wow-delay="0.25s">
+						<ul class="social-icon">
+							<li><a href="https://twitter.com/DonovanMagney" target="_blank" class="fa fa-twitter"></a></li>
+							<li><a href="https://www.linkedin.com/in/donovanmagney" target="_blank" class="fa fa-linkedin"></a></li>
+							<li><a href="https://github.com/realdka13" target="_blank" class="fa fa-github"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+
+	</div>
+		<!-- jQuery -->
+		<script src="../js/jquery.js"></script>
+		<!-- bootstrap -->
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- fullpage -->
+		<script src="../js/jquery.fullPage.js"></script>
+		<!-- smoothScroll -->
+		<script src="../js/smoothscroll.js"></script>
+		<!-- wow -->
+		<script src="../js/wow.min.js"></script>
+		<!-- text rotater -->
+		<script src="../js/jquery.simple-text-rotator.js"></script>
+		<!-- custom -->
+		<script src="../js/custom.js"></script>
+	</body>
+</html>

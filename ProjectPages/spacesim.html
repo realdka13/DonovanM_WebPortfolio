@@ -63,7 +63,7 @@
 					The primary skill I want to learn is applying real world math to this game. There are a couple ways I'm looking at going about this:
 					<ul>
 						<li>Use Newtons gravity equation</li>
-						<li>Use Keplarian Orbit concepts for objects I would like to be in a more rigid orbit</li>
+						<li>Use Keplerian Orbit concepts for objects I would like to be in a more rigid orbit</li>
 						<li>Apply geometry to procedurally generate landable bodies</li>
 					</ul>
 					I will be using the Unity Game Engine and C# to accomplish this. As of now, these are the applications I would like to focus on to get me started. I would also like to minimize the use of borrowed code,
@@ -97,11 +97,11 @@
 					<img src="../images/NewtonsGravDemo.PNG" style="width:650px;height:487.5px;" alt="Newtons Gravity demonstration with orbit lines" class="center">
 					<figcaption class="caption">Newtons Gravity demonstration with orbit lines</figcaption>
 				</figure>
-				<h4>Keplarian Orbits</h4>
+				<h4>Keplerian Orbits</h4>
 				<p>
 					The problem with making a game strictly with Newtons Gravity is that over time, they will slowly drift away and are unredictable in a game sense. Something could happen in the game
 					or the player plays so long that the drift may start being a problem. In <i>Kerbal Space Program</i>, they place all of their bodys on "rails", or predefined paths to avoid the previously mentioned issues.
-					My method for this was to use Keplarian parameters to define an orbit. This also makes it really easy to change orbits to whatver I like at anytime. This is less realistic however, as it
+					My method for this was to use Keplerian parameters to define an orbit. This also makes it really easy to change orbits to whatver I like at anytime. This is less realistic however, as it
 					only creates eliiptical orbits and does not take other bodies into account, or have the spiraling I mentioned earlier. But its exactly why I need it. The script also draws orbit lines like previously, but its much easier
 					since the body will always follow the same path relative to its reference body. Because of this, I was able to make optimizations by only calculating values that have changed since the previous frame.
 					This <a href="https://github.com/realdka13/SpaceSim/tree/main/Space_Sim/Space_Sim/Assets/Scripts/Ellipse%20Orbits" target="__blank">code </a>
@@ -110,13 +110,13 @@
 
 				</p>
 				<figure>
-					<img src="../images/KelplarianOrbitDemo.PNG" style="width:738.5px;height:392px;" alt="Keplarian Orbit demonstration with adjustable parameters" class="center">
-					<figcaption class="caption">Keplarian Orbit demonstration with adjustable parameters</figcaption>
+					<img src="../images/KelplarianOrbitDemo.PNG" style="width:738.5px;height:392px;" alt="Keplerian Orbit demonstration with adjustable parameters" class="center">
+					<figcaption class="caption">Keplerian Orbit demonstration with adjustable parameters</figcaption>
 				</figure>
 				<h4>Procedural Planets Version 1</h4>
 				<p>
 					The next step is to make some actual planet looking objects instead of just spheres or cyclinders. I have never done any mesh generation before, so this step was just me strictly following
-					tutorials online for procedural planets. The result can be seen below. Like with Keplarian orbits, there are lots of values that can be changed, including the colors, to make a unique planet.
+					tutorials online for procedural planets. The result can be seen below. Like with Keplerian orbits, there are lots of values that can be changed, including the colors, to make a unique planet.
 					However there are multiple problems with the current state of these planets. First is they are very low detail planets, and are really only good for looking at at a distance. Next, the code has scalability issues.
 					It does not allow for many different planets, or even other things such as asterids. The 3 planets shown all have a the same terrain pattern on them for example, and the planets have to have an "ocean" layer as well, which of course many planets don't have.
 					Finally, while I typed it on my keyboard, the code is only borrowed code, which breaks my first constraint. But this was an important step for learning mesh generation and how to modify that mesh, especially on a sphere,

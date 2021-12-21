@@ -101,10 +101,16 @@
 					to not be too bad, and I should be able to find a connector rated for some extent of vibrations. Testing will be needed later to
 					test that theory. It also makes the computer much simpler since I would likely need an SD card anyway to take the data off of the flash chip.
 				</p>
-				<figure>
-					<img src="../images/SDCard.jpg" style="width:487.5px;height:650px;" alt="SD Card connection to ATmega" class="center">
-					<figcaption class="caption">SD Card connection to ATmega</figcaption>
-				</figure>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<figure>
+								<img src="../images/SDCard.jpg" alt="SD Card connection to ATmega" class="center">
+								<figcaption class="caption">SD Card connection to ATmega</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
 				<p>
 					I couldn't find a micro SD card connector that would fit in a breadboard, so I made my own by soldering some header pins the the pads
 					of the micro to full size SD card container. One interesting problem with the SD card s that it runs off of 3.3V, while the ATmega runs off of 5V. To get around this, I used a
@@ -127,11 +133,16 @@
 					The <a href="https://github.com/realdka13/Full-Arduino-Code-Set/blob/master/PressureSensorTest/PressureSensorTest.ino" target="__blank">code</a> grabs the pressure
 					data from the sensor and divides it by 100 to convert it to Hectopascals. Examples of all of these can be seen below.
 				</p>
-				<figure>
-					<img src="../images/SensorData.PNG" style="width:627.5px;height:875px;" alt="Accelerometer, gyroscope, and magnetometer data from BNO055</figcaption>
-				</figure>" class="center">
-					<figcaption class="caption">Accelerometer, gyroscope, and magnetometer data from BNO055</figcaption>
-				</figure>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<figure>
+								<img src="../images/SensorData.PNG" alt="Accelerometer, gyroscope, and magnetometer data from BNO055" class="center">
+								<figcaption class="caption">Accelerometer, gyroscope, and magnetometer data from BNO055</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
 				<br>
 				<h4>Moving to the PIC24f</h4>
 				<p>

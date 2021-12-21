@@ -164,6 +164,7 @@ h1,h2,h3,h4,h5
 }
 /* end simpletextrotator */
 
+
 /* start home */  
 
 .flightcomputer-bg
@@ -331,6 +332,7 @@ footer hr
     {
         color: #cc8563;
     }
+/* end social icon */
 
 .center 
     {
@@ -354,4 +356,7 @@ figure figcaption
         font-size: 12px;
         font-style: italic;
     }
-/* end social icon */
+    .no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+      }

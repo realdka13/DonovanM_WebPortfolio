@@ -340,6 +340,13 @@ h1,h2,h3,h4,h5
 /* end about */
 
 /* start portfolio */
+@media screen and (max-width:990px)
+{ 
+#portfolio h5
+    { 
+        display: none; 
+    } 
+}
 #portfolio
     {
         background: #1a1a1a;

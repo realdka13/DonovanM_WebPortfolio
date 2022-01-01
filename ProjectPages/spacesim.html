@@ -144,6 +144,34 @@
 						</div>
 					</div>
 				</div>
+				<h4>Making a Large Scale Solar System</h4>
+				<p>
+					One of the hardest parts about making a space game is size. The real solar system is massive, even just a single planet is. This presents a problem in Unity due to its use of floating points. Unity stores the location
+					of objects in a Vector with 3 floating point numbers, that each can hold 7 digits. Those digits are shared on both sides of the decimal point. That means every digit you add on the left side of the decimal, you will lose precision on the right side. Eventually this loss
+					will cause objects to jitter as othey get farther from the origin. The simplest way to solve this is to use a smaller solar system and smaller planets. I decided against this since I want to make exploration a
+					large part of the game, so I will have to do it the hard way.
+					<br><br>
+					The first step was to implement something called floating origin. A floating origin is something that can be done on very large, or even endless words to try and keep those digits on the right side of the deimal point.
+					This is accomplished by moving everything, including the player, back to the origin after they player moves a certain distance from the origin. This can be optimized more by parenting like objects together and moving just the parent object,
+					instead of everything individually. Then when things are reasonably far enough away, to remove them altogether. This works quite seamlessly and is undetectable by the player. Additionally, the distance everything is shifted is saved to a Vector to
+					keep track of the "floating" origin. This is going to be important in the next step.
+					<br><br>
+					The next thing to tackle is how to place the other objects in the scene. This was done in 2 parts, first I stored the coordinates of both the player and celestial bodies as doubles, which have double the precision of floats, hence the name.
+					These coordinates are the sum of the distance from the true origin in the scene, and the floating orign. When the players coordinates get sufficiently close to one of the objects, they are then drawn to the screen. But thats not quite enough. Celestial objects are big
+					and can be seen from very far away. Right now they can only be seen up close. The solution to this is to keep a scaled solar system to act as a 3D skybox. This solar system is in sync with the true system, but much smaller.
+					This solar system has its own camera as well. The view from this camera is then rendered on the background of the players main camera. Giving the illusion of objects at a distance. Combining floating origin, a scaled skybox, and storing true coordinates
+					as doubles have allowed me to create the illusion of a very large system for the player!
+				</p>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<figure>
+								<img src="../images/SolarSystemBuildExample.PNG" alt="Example of a real space planet and scaled space planet in the editor and game windows" class="center">
+								<figcaption class="caption">Example of a real space planet and scaled space planet in the editor and game windows</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
 				</div>
 			</div>
 		</div>
@@ -157,9 +185,9 @@
 				</div>
 				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
 					<p>
-						The next clear step is to work on version 2 of procedural planets. The next cersion must alow for much more unique objects, and work for a future player to land on. A proper player controller is also going to be coming in the near future to
-						allow exploration of the new planets and to be able to tweak the solar system so that it looks and runs well from a player perspective.
-						The solar system should be able to be built out in more detail after that.
+						Now that the basic structure of the solar system is in place, the next logical step is to flesh out all of the celestial bodies, or version 2 of the procedural planets. I'm not sure on what method to go about for this though.
+						It would be interesting to persue terrain modification during gameplay, but adds a lot of complexity. It may make more seense to restrict that to smaller bodies such as asteroids. It also will need to
+						be possible to land on and interact with these bodies before I can work on a proper player that can fly to all of these objects.
 					</p>
 				</div>
 			</div>

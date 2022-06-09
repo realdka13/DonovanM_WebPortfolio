@@ -407,6 +407,7 @@ h1,h2,h3,h4,h5
 		font-weight: bold;
        		padding-bottom: 20px;
 		color: #ffffff;
+        text-align:center;
     }
 #contact .fa
     {
@@ -447,8 +448,8 @@ h1,h2,h3,h4,h5
     }
 #contact a
     {
-	text-decoration:none;
-	color:#979797;
+	    text-decoration:none;
+	    color:#979797;
     }
 /* end contact */
 

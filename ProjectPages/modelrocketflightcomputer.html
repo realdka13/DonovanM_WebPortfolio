@@ -59,7 +59,7 @@
 				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
 				<p>
 					To learn how to use a plain microcontroller (instead of a prebuilt board such as the Arduino), a flight computer
-					is a great project because it can start very simple, logging data. Later, this can be expanded
+					is a great project because it can start very simpl by just logging data. Later, this can be expanded
 					to actually have control over the rocket. Such as triggering ejection charges or thrust vector control (TVC, moving the motor
 					to maintain control of the rocket in flight). For now however, we will stick with a data logger.
 					This variant of the flight computer will include a few things:
@@ -91,10 +91,10 @@
 					<br><br>
 					<h4>Saving Data</h4>
 					I decided to tackle the method of saving the data first, since this will be useful when wiring up the sensors. There are 2
-					common solutions to this. A flash chip and an SD card. An SD card is a simple solution, ther Arduino has a library available
+					common solutions to this. A flash chip and an SD card. An SD card is a simple solution, because the Arduino has a library available
 					and there are tons of resources online using them. However, others (such as BPS Space on YouTube) have explained their issue
 					of issues writing to the SD card during flight due to all of the vibrations. A flash chip wont have this issue. It's much more
-					reliable but somes with the tradeoff of being more difficult to implement. Additionally, an SD card is easy to remove and transfer the data,
+					reliable but with the tradeoff of being more difficult to implement. Additionally, an SD card is easy to remove and transfer the data,
 					whereas a flash chip needs an alternative way to move the data.
 					<br><br>
 					I decided on an SD card. The kind of rocket I will be using this first version on will be quite small, and I expect the vibrations
@@ -113,7 +113,7 @@
 				</div>
 				<p>
 					I couldn't find a micro SD card connector that would fit in a breadboard, so I made my own by soldering some header pins the the pads
-					of the micro to full size SD card container. One interesting problem with the SD card s that it runs off of 3.3V, while the ATmega runs off of 5V. To get around this, I used a
+					of the micro to full size SD card container. One interesting problem with the SD card is that it runs off of 3.3V, while the ATmega runs off of 5V. To get around this, I used a
 					logic level converter for the logic connections, and then used a 3.3V voltage regulator for Vcc. The code is very simple, using the Arduino libraries
 					and can be found on <a href="https://github.com/realdka13/Full-Arduino-Code-Set/blob/master/BareSDCard/BareSDCard.ino" target="__blank">GitHub here</a> and basically just checks
 					for a connection, and will attempt to create and open a new file, write to it, then close and reopen it to read from and display to the Arduino serial port.
@@ -123,8 +123,8 @@
 				<h4>Collecting Data</h4>
 				<p>
 					To simplify the sensor setup, I used an inertial measurment unit, or IMU. This sensor is really just 3 sensors in 1, the accelerometer, gyroscope, and magnetometer.
-					I selected the BNO055 for the existances of Arduino libraries and good reviews. This IMU also has a lot of built in functions which allow you to
-					receive just raw data, or something like quaternions. It also has the ability to calibrate the sensors. The tradoff is this is a relatively expensive IMU
+					I selected the BNO055 for the existance of Arduino libraries and good reviews. This IMU also has a lot of built in functions which allow you to
+					receive just raw data, or alternatively something like quaternions. It also has the ability to calibrate the sensors. The tradoff is that this is a relatively expensive IMU
 					for the scale. For the test <a href="https://github.com/realdka13/Full-Arduino-Code-Set/blob/master/IMU%20Project/IMU/IMU.ino" target="__blank">code</a>, I connect to the IMU thorugh I2C
 					and grab data from each of the 3 sensors as well as the sensor temperature and calibration data every 100ms, the refresh rate of the BNO. These all then get printed to the screen and can be
 					intercepted by an external application for graphing.

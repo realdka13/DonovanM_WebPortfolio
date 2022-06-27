@@ -168,7 +168,37 @@ h1,h2,h3,h4,h5
 }
 /* end simpletextrotator */
 
-/* start home */       
+/* start home */ 
+.profileimg
+    {
+        width:40%;
+        float:left;
+        margin-right:10px;
+        margin-top:15px;
+    }
+.profiletext
+    {
+        width:55%;
+        float:right;
+    }
+@media only screen and (max-width: 990px)
+    {
+        .profileimg
+        {
+            float: none;
+            width: 60%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .profiletext
+        {
+            float: none;
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+    }      
 #home
 	{
         background: url('../images/mars-globe-valles-marineris-enhanced.jpg');

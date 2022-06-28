@@ -371,10 +371,16 @@ h1,h2,h3,h4,h5
 /* start portfolio */
 @media screen and (max-width:990px)
 { 
-#portfolio h5
+    #portfolio h5
     { 
         display: none; 
-    } 
+    }
+    #portfolio .portfolio-thumb
+    {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 #portfolio
     {

@@ -39,10 +39,9 @@
 					<div class="row">
 						<div class="col-md-2"></div>
 						<div class="col-md-8 wow fadeIn" data-wow-delay="0.0s">
-							<h1>Firefighting Game/Simulation</h1>
-							<h3>*WORK IN PROGRESS*</h3>
+							<h1>Firefighting Sim</h1>
 							<h3>Objective</h3>
-							<p>Practice and improve programming skills by creating a firefighting game/simualtion, as well as improve public awareness</p>
+							<p>Practice and improve programming skills by creating a firefighting sim</p>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
@@ -60,9 +59,8 @@
 				<p>
 					Most of my projects have a relatively small coding aspect to them. Not giving me a big opportunity to enhance my coding skills.
 					Games are a great way to practice and improve coding skills in an engaging way. I've recently done an internship with a NASA project group where the subject was wildfire managment.
-					Taking inspiration from this, I have come up with a "Firefighting Sim/Game". This sim/game will demonstrate some of the ways wildfires are started, enviromental factors that contribute to them,
-					and how firefighters deal with them. Ultimately this project is intended to be both programming practice and an outreach project.
-				</p>
+					Taking inspiration from this, I have come up with a "Firefighting Sim" proof of concept. This project is intended to further my coding skills. The focus being primarily on
+					being able to combine a bunch of modifier variables which are each affected by each other and also being able to fine tune them to get the desired result.
 				</div>
 			</div>
 		</div>
@@ -72,10 +70,10 @@
 		<div id="finalproduct" class="section">
 			<div class="container">
 				<div class="col-md-12 wow">
-					<h2>Progress</h2>
+					<h2>Final Product</h2>
 				</div>
 				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-					<h4>Basic Fire</h4>
+					<h4>The Fire</h4>
 					<p>
 						The first step to this project is a very basic visual for the fire. Unity already has a particle system built in which is perfect for fire. A few minutes of changing settings and I came up with
 						the fire pictured below. The particles start as vibrant yellow squares, then increase in size and move to a dark orange color as they rise. This is only intended to be a low polygon visual
@@ -84,38 +82,19 @@
 						to be able to easily see the chance of any particular object igniting, so I created a UI element that checks the percent chance that a clicked object will ignite and display that value as a radial slider
 						on the object. The color inside that slider changes to correspond to the likelihood of ignition, with red being most likely and green being least likely. A video example can be found <a target="_blank" href="https://twitter.com/DonovanMagney/status/1548706909712269316"><u>here</u></a>.
 						Thats it for a basic skeleton of the fire mechanics!
-					</p>
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<figure>
-									<img src="../images/BasicFire.PNG" alt="Placeholder fire particle system" class="center">
-									<figcaption class="caption">The fire particle system</figcaption>
-								</figure>
+
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<figure>
+										<img src="../images/BasicFire.PNG" alt="Placeholder fire particle system" class="center">
+										<figcaption class="caption">The fire particle system</figcaption>
+									</figure>
+								</div>
 							</div>
 						</div>
-					</div>
-					<h4>Ignition Chance Visualizer</h4>
-					<p>
-						For the basic implementation of fire, I just set an arbitrary percent chance that a flammable object nearby will ignite. Environmental variables that can be modified
-						to change the ignition chances would make the fire more realistic. Some variables will be easy to test, as they apply to everything in the scene, such as humidity. But others like range and wind are harder to test because the values
-						are different in every location. To make testing easier, I decided to create a grid of small objects around a burning object that I call the "visualizer". Instead of burning themselves, these objects will turn to
-						the color on a color gradient corresponding to their ignition chance. Red objects are the most likely to ignite, blue objects are the least likely. The visualizer proved invaluable trying to implement
-						the enviromental variables, and will further be useful when tuning these variables later in the completed game.
-					</p>
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<figure>
-									<img src="../images/Visualizer.PNG" alt="Visualizer gradient showing burn chance near burning object" class="center">
-									<figcaption class="caption">Ignition chance of every object due to wind and range from the central burning object.</figcaption>
-								</figure>
-							</div>
-						</div>
-					</div>
-					<h4>Completed Fire Modifiers</h4>
-					<p>
-						With the visualizer implemented, I set to work adding 4 variables to ingition chance, these are: humidity, fuel type, range, and wind. High humidity decreases ignition chance, while low humidity increases it. Certain
+
+						To improve the spread beyond just a arbitrary chance, I added 4 variables for ignition chance of nearby objects, these are: humidity, fuel type, range, and wind. High humidity decreases ignition chance, while low humidity increases it. Certain
 						fuels such as trees are less likely to start burning, and fuels such as grass are very susceptible. Ignition chance decreases as the range from the burning object and the flammable object increase. Finally, objects in the direction
 						of the wind also have an increased chance of burning. Each of these variables (except fuel type) have curves associated with them to allow non-linear changes to the ignition chances. Each of these
 						variables can also be turned on and off. This will be useful in allowing the player to play with individual settings to see how they alone change the behavior of the fire. In the future things like amount of sunlight objects are recieving
@@ -126,7 +105,42 @@
 							<div class="col">
 								<figure>
 									<img src="../images/Modifiers.PNG" alt="Screenshot of fire modifiers" class="center">
-									<figcaption class="caption">The current modifiers of the fire</figcaption>
+									<figcaption class="caption">The adjustable fire modifiers</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+					<h4>Ignition Chance Visualizer</h4>
+					<p>
+						When implementing the fire modifiers, I of course needed to test them. Some variables will be easy to test, as they apply to everything in the scene like humidity. But others like range and wind are harder to test because the values
+						are different in every location. To make testing easier, I decided to create a grid of small objects around a burning object that I call the "visualizer". Instead of burning themselves, these objects will turn to
+						the color on a color gradient corresponding to their ignition chance. Red objects are the most likely to ignite, and blue objects are the least likely. I can also turn on and off any of the modifiers to see how they all work individually, or
+						combined with the other modifiers.
+					</p>
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<figure>
+									<img src="../images/Visualizer.PNG" alt="Visualizer gradient showing burn chance near burning object" class="center">
+									<figcaption class="caption">Ignition chance of every object due to a combination of wind and range.</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+					<h4>Firefighting Tools</h4>
+					<p>
+						Finally there are the firefighting tools. There are three that I added, a fireline (FL), which cuts away all of the flammable objects in its path; a water
+						drop (WD), which extinguishes the fire through its path; and finally, the retardant drop (RD), which reduces the ignition chance of all of the objects in its area.
+						To use these, one of the tool UI button are clicked, then the player will be allowed click on 2 areas of the map creating a line. Any object intersecting this line, as well as a
+						given width away from it, has the corresponding tool's effect applied to it. An example of the tools in action can be found <a target="_blank" href="https://twitter.com/DonovanMagney/status/1550568402355355649"><u>here</u></a>.
+						To make it easier to visualize, I added a violet cube that shows the area that these effects are happening after you place them. 
+					</p>
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<figure>
+									<img src="../images/Fireline.PNG" alt="Screenshot of a violet debug cube showing cut fireline" class="center">
+									<figcaption class="caption">An example of creating a fireline, shown visually with a violet debug cube</figcaption>
 								</figure>
 							</div>
 						</div>
@@ -140,13 +154,15 @@
 		<div id="conclusion" class="section">
 			<div class="container">
 				<div class="col-md-12 wow">
-					<h2>Next Steps</h2>
+					<h2>Conclusion</h2>
 				</div>
 				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
 					<p>
-						Now that the basic fire mechanics are in place, it would be benificial to work on a UI, this would allow me to do more work in the game itself and avoid having to restart the game
-						whenever I make changes. An improved player version of the burn chance indicator would also require this. Then once a UI is in place, firefighting abilities will be much easier
-						to implement and test.
+						This is as far as I am going to take this project for the moment. The proof of concept is complete and I have learned a lot, the biggest "eureka" moment
+						being when I decided to spend a little time creating the ignition chance visualizer, saving me a lot of time testing and adjusting the modifier
+						variables. It also has the added benefit of being a good demonstration piece when showing other people how each of the modifier variables change the
+						ignition chances. If I pick this project up again in the future, there are many things I would like to add, such as the fire going out after
+						period of time, better user feedback when using firefighting tools, adding a backburn tool, and improving the fire visuals.
 					</p>
 				</div>
 			</div>

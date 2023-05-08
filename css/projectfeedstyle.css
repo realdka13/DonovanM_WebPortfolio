@@ -20,18 +20,6 @@ body
 #home .fp-slide,
 #home .fp-tableCell,
 
-#overview,
-#overview .fp-slide,
-#overview .fp-tableCell,
-
-#finalproduct,
-#finalproduct .fp-slide,
-#finalproduct .fp-tableCell,
-
-#conclusion,
-#conclusion .fp-slide,
-#conclusion .fp-tableCell,
-
 footer,
 footer .fp-slide,
 footer .fp-tableCell
@@ -49,13 +37,6 @@ h1,h2,h3,h4,h5
     }
 /* end all heading */
 
-/* start all section */
-#overview, #finalproduct, #conclusion
-    {
-        padding-top: 100px;
-        padding-bottom: 120px;
-    }
-/* end all section */
 
 /* start simpletextrotator */
 .rotating {
@@ -168,9 +149,9 @@ h1,h2,h3,h4,h5
 /* start home */  
 
 /*Background Photo*/
-.gearscoopmodule-bg
+.projectfeed-bg
 {
-    background: url('../images/Gear_Scoop_Robot.jpg');
+    background: url('../images/FireSim.PNG');
 }
 
 #home
@@ -247,6 +228,7 @@ h1,h2,h3,h4,h5
         background-color: #000000;
         width: 100%;
         margin: 20px;
+        max-width: 350px;
     }
 
 .vid

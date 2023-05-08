@@ -79,7 +79,7 @@
 						to each body and tell the body to calculate the total force acting upon it, calculate its new acceleration, velocity, then finally move itself to
 						the proper position from that velocity. The objects now will move, but its difficult to place them in an orbit without some debug lines that will show their future paths.
 						I downloaded a script from Sebastian Lague (on YouTube) to display the path of the bodies in the editor. That was pretty much it for this portion.
-						The code for this part of the project can be found <a href="https://github.com/realdka13/SpaceSim/tree/main/Space_Sim/Space_Sim/Assets/Scripts/Newtons%20Gravitation" target="__blank">here</a>.
+						The code for this part of the project can be found <a href="https://github.com/realdka13/SpaceSim/tree/main/Space_Sim/Space_Sim/Assets/Game%20Components/Celestial%20Motion/Newtons%20Gravitation/Scripts" target="__blank">here</a>.
 						The code is heavily borrowed from Sebastion, although edits have been made for my use case.
 						After implementing this, I notice that when placing small bodies around a much larger one that is not moving, they end up spiraling in the direction normal to the orbit.
 						This of course in analogous to what happens in real life, nothing is completely still, our sun moves as well and the orbits follow.
@@ -101,7 +101,7 @@
 						Keplarian parameters can be used to define orbits. This also makes it really easy to change orbits to whatever I like at anytime. This is less realistic since it
 						only creates eliiptical orbits and does not take other bodies into account, or have the spiraling I mentioned earlier. The script also draws orbit lines like previously, but its much easier
 						since the body will always follow the same path relative to its reference body. Because of this, I was able to make optimizations by only calculating values that have changed since the previous frame.
-						This <a href="https://github.com/realdka13/SpaceSim/tree/main/Space_Sim/Space_Sim/Assets/Scripts/Ellipse%20Orbits" target="__blank">code </a>
+						This <a href="https://github.com/realdka13/SpaceSim/blob/main/Space_Sim/Space_Sim/Assets/Game%20Components/Celestial%20Motion/Ellipse%20Orbits/Scripts/FloatOrbit/OnRailsObject.cs" target="__blank">code </a>
 						was a bit more complicated, but mostly due to the math involved. 
 					</p>
 					<div class="container">
@@ -143,7 +143,6 @@
 				<div class="row">
 					<div class="col-md-12 wow fadeIn" data-wow-delay="0.25s">
 						<ul class="social-icon">
-							<li><a href="https://twitter.com/DonovanMagney" target="_blank" class="fa fa-twitter"></a></li>
 							<li><a href="https://www.linkedin.com/in/donovanmagney" target="_blank" class="fa fa-linkedin"></a></li>
 							<li><a href="https://github.com/realdka13" target="_blank" class="fa fa-github"></a></li>
 						</ul>

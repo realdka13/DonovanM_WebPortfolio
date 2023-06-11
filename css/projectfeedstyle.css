@@ -236,6 +236,8 @@ h1,h2,h3,h4,h5
         display: block;
         margin: auto;
         margin-bottom: 20px;
+        max-width: 100%;
+        height: auto;
     }
   
   /* Add a card effect for articles */

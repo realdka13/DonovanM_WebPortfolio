@@ -207,6 +207,10 @@ h1,h2,h3,h4,h5
 {
     background: url('../images/SpaceSim.PNG');
 }
+.pitottube-bg
+{
+    background: url('../images/PitotTube.jpg');
+}
 
 #home
 	{

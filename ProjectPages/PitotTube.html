@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Rocket Pitot Tube</title>
+		<meta name="description" content="555 Square Wave Oscillator details">
+        <meta name="author" content="Donovan Magney">
+        <!-- 
+        Lavish HTML CSS Template
+        https://templatemo.com/tm-458-lavish
+        -->
+        
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- animate -->
+		<link rel="stylesheet" href="../css/animate.min.css">
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<!-- font-awesome -->
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<!-- google font -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
+		<!-- fullpage -->
+		<link rel="stylesheet" href="../css/jquery.fullPage.css">
+		<!-- custom -->
+		<link rel="stylesheet" href="../css/projectpagestyle.css">
+	</head>
+	<body>
+
+	<div id="fullpage">
+
+		<div id="fullpage">
+			<!-- start home -->
+			<div id="home" class="section pitottube-bg">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8 wow fadeIn" data-wow-delay="0.0s">
+							<h1>Rocket Pitot Tube</h1>
+							<h3>Objective</h3>
+							<p>The avionics team must select suitable pressure sensors and design a PCB with the ability to collect and store pressure data through the flight of the rocket, with the goal of being able to measure airspeed</p>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+				</div>
+			</div>
+			<!-- end home -->
+
+		<!-- start overview -->
+		<div id="overview" class="section">
+			<div class="container">
+				<div class="col-md-12 wow">
+					<h2>Overview</h2>
+				</div>
+				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
+				<p>
+					For the 2023 Spaceport America cup rocket, the "Special Projects" sub-team's project was to build a pitot tube that could be placed within the nose of the rocket. Special Projects handled the structure, but was required to work with the
+					avionics sub-team to construct a PCB for data collection. This PCB must be able to fit into the nosecone and have connections to the pitot tube through piping. It must have 6 different sensors, all of which
+					output their data in analog. Therefore, an analog to digital converter was also needed. The data coming from this board was to be sent to a storage location away from the pitot tube itself. Initially
+					this was supposed to be to the Universal Flight Computer that was already in the rocket, however it was later decided due to time constaints to install a Teensy microcontroller instead. 
+				</p>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<figure>
+								<img src="../images/PitotTubePCB.jpg" alt="The assembled pitot tube PCB" class="center">
+								<figcaption class="caption">The assembled pitot tube PCB</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- end overview -->
+
+		<!-- start finalproduct -->
+		<div id="finalproduct" class="section">
+			<div class="container">
+				<div class="col-md-12 wow">
+					<h2>Final Product</h2>
+				</div>
+				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
+				<p>
+					The final design was a circular PCB that would fit the shape of the nosecone, with 4 large holes to accommodate the supports for the pitot tube itselt. Four more smaller
+					holes provide mounting holes for the PCB itself. The pressure sensor chosen is the BPS130-HA100P-1SG. Six of these sensors were arranged in a pattern agreed upon by avionics and the special projects sub-teams to work best with the piping required
+					for the pitot tube. All of these sensors went to one ADS8344E analog to digital converter (ADC). The ADC then sends it output to an offboard connector that eventually makes it's way to a Teensy microcontroller.
+				</p>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<figure>
+								<img src="../images/PitotAltium.PNG" alt="Routed board in Altium" class="center">
+								<figcaption class="caption">Routed board in Altium</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- end finalproduct -->
+
+		<!-- start conclusion -->
+		<div id="conclusion" class="section">
+			<div class="container">
+				<div class="col-md-12 wow">
+					<h2>Conclusion</h2>
+				</div>
+				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
+					<p>
+						Shown below is the annotated plots of the pitot tubes performance in actual flight. The static pressure (top plot) measures atmospheric pressure around the rocket. It very clearly shows each stage of flight.
+						From it sitting on the pad, launch, which is indicated by the beginning of decreasing pressure, and apogee, which is the point at which the rocket hits zero upward velocity and starts falling. Finally, each parachute
+						stage is visable by the rate of change in altitude after apogee. Ground impact is the very last spike in pressure. The pitot pressure measures the static air pressure plus ram air pressure caused by the velocity of the rocket through the air.
+						The same stages of flight are visable in this plot as well, but an additional point, motor burnout, is indicated by the sudden decrease in ram air pressure, as the rocket is no longer being accelerated by the motor, and instead being slowed by
+						air resistance. These plots are exactly what we would expect to see on a nominal launch. In fact, it was the launch that won us the 2023 competition (by points)! This project was therefore a success.
+					</p>
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<figure>
+									<img src="../images/PitotPlots.png" alt="Plots of the data collected in flight" class="center">
+									<figcaption class="caption">Plots of the data collected in flight</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end conclusuon -->
+
+		<!-- start footer -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow fadeIn" data-wow-delay="0.25s">
+						<ul class="social-icon">
+							<li><a href="https://www.linkedin.com/in/donovanmagney" target="_blank" class="fa fa-linkedin"></a></li>
+							<li><a href="https://github.com/realdka13" target="_blank" class="fa fa-github"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+
+	</div>
+		<!-- jQuery -->
+		<script src="../js/jquery.js"></script>
+		<!-- bootstrap -->
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- fullpage -->
+		<script src="../js/jquery.fullPage.js"></script>
+		<!-- smoothScroll -->
+		<script src="../js/smoothscroll.js"></script>
+		<!-- wow -->
+		<script src="../js/wow.min.js"></script>
+		<!-- text rotater -->
+		<script src="../js/jquery.simple-text-rotator.js"></script>
+		<!-- custom -->
+		<script src="../js/custom.js"></script>
+	</body>
+</html>

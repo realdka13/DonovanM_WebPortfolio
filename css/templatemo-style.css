@@ -201,7 +201,7 @@ h1,h2,h3,h4,h5
     }      
 #home
 	{
-        background: url('../images/header.jpg');
+        background: url('../images/mars-globe-valles-marineris-enhanced.jpg');
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -384,7 +384,6 @@ h1,h2,h3,h4,h5
 }
 #portfolio
     {
-        background: #1a1a1a;
         text-align: center;
     }
 #portfolio h2

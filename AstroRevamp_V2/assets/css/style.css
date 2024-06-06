@@ -437,6 +437,7 @@ section {
   display: block;
   background: none;
   border-radius: 0;
+  overflow:visible;
 }
 
 .skills .progress .skill {

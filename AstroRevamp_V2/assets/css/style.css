@@ -867,6 +867,8 @@ section {
 #contact input[type="submit"]:hover
     {
         background: #ffffff;
+        border-color: #000000;
+        border-radius: 1px;
         color:rgb(20,157,221);
     }
 

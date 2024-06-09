@@ -1,203 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
 
-		<title>Firefighting Sim</title>
-		<meta name="description" content="Firefighting Sim Details">
-        <meta name="author" content="Donovan Magney">
-        <!-- 
-        Lavish HTML CSS Template
-        https://templatemo.com/tm-458-lavish
-        -->
-        
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-		<!-- animate -->
-		<link rel="stylesheet" href="../css/animate.min.css">
-		<!-- bootstrap -->
-		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<!-- font-awesome -->
-		<link rel="stylesheet" href="../css/font-awesome.min.css">
-		<!-- google font -->
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
-		<!-- fullpage -->
-		<link rel="stylesheet" href="../css/jquery.fullPage.css">
-		<!-- custom -->
-		<link rel="stylesheet" href="../css/projectpagestyle.css">
-	</head>
-	<body>
+  <title>Firefighting Sim</title>
+  <meta content="Practice and improve programming skills by creating a firefighting sim" name="description">
+  <meta content="Fire, Firefighting, Simulation, Wildfire" name="keywords">
 
-	<div id="fullpage">
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
 
-		<div id="fullpage">
-			<!-- start home -->
-			<div id="home" class="section firefightingsim-bg">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8 wow fadeIn" data-wow-delay="0.0s">
-							<h1>Firefighting Sim</h1>
-							<h3>Objective</h3>
-							<p>Practice and improve programming skills by creating a firefighting sim</p>
-						</div>
-						<div class="col-md-2"></div>
-					</div>
-				</div>
-			</div>
-			<!-- end home -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-		<!-- start overview -->
-		<div id="overview" class="section">
-			<div class="container">
-				<div class="col-md-12 wow">
-					<h2>Overview</h2>
-				</div>
-				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-				<p>
-					Most of my projects have a relatively small coding aspect to them. Not giving me a big opportunity to enhance my coding skills.
-					Games are a great way to practice and improve coding skills in an engaging way. I've recently done an internship with a NASA project group where the subject was wildfire managment.
-					Taking inspiration from this, I have come up with a "Firefighting Sim" proof of concept. This project is intended to further my coding skills. The focus being primarily on
-					being able to combine a bunch of modifier variables which are each affected by each other and also being able to fine tune them to get the desired result.
-				</div>
-			</div>
-		</div>
-		<!-- end overview -->
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-		<!-- start finalproduct -->
-		<div id="finalproduct" class="section">
-			<div class="container">
-				<div class="col-md-12 wow">
-					<h2>Final Product</h2>
-				</div>
-				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-					<h4>The Fire</h4>
-					<p>
-						The first step to this project is a very basic visual for the fire. Unity already has a particle system built in which is perfect for fire. A few minutes of changing settings and I came up with
-						the fire pictured below. The particles start as vibrant yellow squares, then increase in size and move to a dark orange color as they rise. This is only intended to be a low polygon visual
-						for the early stages of testing. Next the fire needs to spread. This was completed by finding all of the burning objects in the scene, and checking in a certain radius around
-						them for any flammable object. For every object found, there is a random chance that it will ignite on each "tick" of the game. A tick is a time period variable I can set, usually at 3 seconds. Finally I wanted
-						to be able to easily see the chance of any particular object igniting, so I created a UI element that checks the percent chance that a clicked object will ignite and display that value as a radial slider
-						on the object. The color inside that slider changes to correspond to the likelihood of ignition, with red being most likely and green being least likely. A video example can be found in my <a target="_blank" href="../ProjectFeed.html"><u>project feed</u></a>.
-						Thats it for a basic skeleton of the fire mechanics!
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
 
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<figure>
-										<img src="../images/BasicFire.PNG" alt="Placeholder fire particle system" class="center">
-										<figcaption class="caption">The fire particle system</figcaption>
-									</figure>
-								</div>
-							</div>
-						</div>
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
 
-						To improve the spread beyond just a arbitrary chance, I added 4 variables for ignition chance of nearby objects, these are: humidity, fuel type, range, and wind. High humidity decreases ignition chance, while low humidity increases it. Certain
-						fuels such as trees are less likely to start burning, and fuels such as grass are very susceptible. Ignition chance decreases as the range from the burning object and the flammable object increase. Finally, objects in the direction
-						of the wind also have an increased chance of burning. Each of these variables (except fuel type) have curves associated with them to allow non-linear changes to the ignition chances. Each of these
-						variables can also be turned on and off. This will be useful in allowing the player to play with individual settings to see how they alone change the behavior of the fire. In the future things like amount of sunlight objects are recieving
-						or topography factors may be added as modifiers.
-					</p>
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<figure>
-									<img src="../images/Modifiers.PNG" alt="Screenshot of fire modifiers" class="center">
-									<figcaption class="caption">The adjustable fire modifiers</figcaption>
-								</figure>
-							</div>
-						</div>
-					</div>
-					<h4>Ignition Chance Visualizer</h4>
-					<p>
-						When implementing the fire modifiers, I of course needed to test them. Some variables will be easy to test, as they apply to everything in the scene like humidity. But others like range and wind are harder to test because the values
-						are different in every location. To make testing easier, I decided to create a grid of small objects around a burning object that I call the "visualizer". Instead of burning themselves, these objects will turn to
-						the color on a color gradient corresponding to their ignition chance. Red objects are the most likely to ignite, and blue objects are the least likely. I can also turn on and off any of the modifiers to see how they all work individually, or
-						combined with the other modifiers.
-					</p>
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<figure>
-									<img src="../images/Visualizer.PNG" alt="Visualizer gradient showing burn chance near burning object" class="center">
-									<figcaption class="caption">Ignition chance of every object due to a combination of wind and range.</figcaption>
-								</figure>
-							</div>
-						</div>
-					</div>
-					<h4>Firefighting Tools</h4>
-					<p>
-						Finally there are the firefighting tools. There are three that I added, a fireline (FL), which cuts away all of the flammable objects in its path; a water
-						drop (WD), which extinguishes the fire through its path; and finally, the retardant drop (RD), which reduces the ignition chance of all of the objects in its area.
-						To use these, one of the tool UI button are clicked, then the player will be allowed click on 2 areas of the map creating a line. Any object intersecting this line, as well as a
-						given width away from it, has the corresponding tool's effect applied to it. An example of the tools in action can be found on my <a target="_blank" href="../ProjectFeed.html"><u>project feed</u></a>!
-						To make it easier to visualize, I added a violet cube that shows the area that these effects are happening after you place them. 
-					</p>
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<figure>
-									<img src="../images/Fireline.PNG" alt="Screenshot of a violet debug cube showing cut fireline" class="center">
-									<figcaption class="caption">An example of creating a fireline, shown visually with a violet debug cube</figcaption>
-								</figure>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end finalproduct -->
+<body>
 
-		<!-- start conclusion -->
-		<div id="conclusion" class="section">
-			<div class="container">
-				<div class="col-md-12 wow">
-					<h2>Conclusion</h2>
-				</div>
-				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-					<p>
-						This is as far as I am going to take this project for the moment. The proof of concept is complete and I have learned a lot, the biggest "eureka" moment
-						being when I decided to spend a little time creating the ignition chance visualizer, saving me a lot of time testing and adjusting the modifier
-						variables. It also has the added benefit of being a good demonstration piece when showing other people how each of the modifier variables change the
-						ignition chances. If I pick this project up again in the future, there are many things I would like to add, such as the fire going out after
-						period of time, better user feedback when using firefighting tools, adding a backburn tool, and improving the fire visuals.
-					</p>
-				</div>
-			</div>
-		</div>
-		<!-- end conclusuon -->
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-		<!-- start footer -->
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 wow fadeIn" data-wow-delay="0.25s">
-						<ul class="social-icon">
-							<li><a href="https://www.linkedin.com/in/donovanmagney" target="_blank" class="fa fa-linkedin"></a></li>
-							<li><a href="https://github.com/realdka13" target="_blank" class="fa fa-github"></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- end footer -->
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
 
-	</div>
-		<!-- jQuery -->
-		<script src="../js/jquery.js"></script>
-		<!-- bootstrap -->
-		<script src="../js/bootstrap.min.js"></script>
-		<!-- fullpage -->
-		<script src="../js/jquery.fullPage.js"></script>
-		<!-- smoothScroll -->
-		<script src="../js/smoothscroll.js"></script>
-		<!-- wow -->
-		<script src="../js/wow.min.js"></script>
-		<!-- text rotater -->
-		<script src="../js/jquery.simple-text-rotator.js"></script>
-		<!-- custom -->
-		<script src="../js/custom.js"></script>
-	</body>
+      <div class="profile">
+        <img src="../assets/img/FlightSuitPhoto.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Donovan Magney</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://github.com/realdka13" class="github"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/donovanmagney/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.instagram.com/tomorrows_space_explorer/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="../index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="../index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="../index.html#analogastro" class="nav-link scrollto"><i class="bx bx-planet"></i> <span>Analog Astronaut</span></a></li>
+          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav>
+      <!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Firefighting Sim</h2>
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li>Firefighting Sim</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="../assets/img/portfolio/FireSim.PNG" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Software</li>
+                <li><strong>Client</strong>: Personal</li>
+                <li><strong>Project date</strong>: Jun 2022 - Aug 2022</li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>Project Objective</h2>
+              <p>
+                Practice and improve programming skills by creating a firefighting sim.
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-description">
+            <h2>Overview</h2>
+            <p>
+              Most of my projects have a relatively small coding aspect to them. Not giving me a big opportunity to enhance my coding skills.
+					    Games are a great way to practice and improve coding skills in an engaging way. I've recently done an internship with a NASA project group where the subject was wildfire managment.
+					    Taking inspiration from this, I have come up with a "Firefighting Sim" proof of concept. This project is intended to further my coding skills. The focus being primarily on
+					    being able to combine a bunch of modifier variables which are each affected by each other and also being able to fine tune them to get the desired result.
+            </p>
+          </div>
+
+          <div class="portfolio-description">
+            <h2>Final Product</h2>
+            <h4>The Fire</h4>
+            <p>
+              The first step to this project is a very basic visual for the fire. Unity already has a particle system built in which is perfect for fire. A few minutes of changing settings and I came up with
+              the fire pictured below. The particles start as vibrant yellow squares, then increase in size and move to a dark orange color as they rise. This is only intended to be a low polygon visual
+              for the early stages of testing. Next the fire needs to spread. This was completed by finding all of the burning objects in the scene, and checking in a certain radius around
+              them for any flammable object. For every object found, there is a random chance that it will ignite on each "tick" of the game. A tick is a time period variable I can set, usually at 3 seconds. Finally I wanted
+              to be able to easily see the chance of any particular object igniting, so I created a UI element that checks the percent chance that a clicked object will ignite and display that value as a radial slider
+              on the object. The color inside that slider changes to correspond to the likelihood of ignition, with red being most likely and green being least likely. A video example can be found in my <a target="_blank" href="../ProjectFeed.html"><u>project feed</u></a>.
+              Thats it for a basic skeleton of the fire mechanics!
+            </p>
+            <figure>
+              <img src="../assets/img/portfolio/BasicFire.PNG" alt="Placeholder fire particle system" class="center">
+              <figcaption class="caption">The fire particle system</figcaption>
+            </figure>
+            <p>
+              To improve the spread beyond just a arbitrary chance, I added 4 variables for ignition chance of nearby objects, these are: humidity, fuel type, range, and wind. High humidity decreases ignition chance, while low humidity increases it. Certain
+              fuels such as trees are less likely to start burning, and fuels such as grass are very susceptible. Ignition chance decreases as the range from the burning object and the flammable object increase. Finally, objects in the direction
+              of the wind also have an increased chance of burning. Each of these variables (except fuel type) have curves associated with them to allow non-linear changes to the ignition chances. Each of these
+              variables can also be turned on and off. This will be useful in allowing the player to play with individual settings to see how they alone change the behavior of the fire. In the future things like amount of sunlight objects are recieving
+              or topography factors may be added as modifiers.
+            </p>
+            <figure>
+              <img src="../assets/img/portfolio/Modifiers.PNG" alt="Screenshot of fire modifiers" class="center">
+              <figcaption class="caption">The adjustable fire modifiers</figcaption>
+            </figure>
+          </div>
+
+          <div class="portfolio-description">
+            <h4>Ignition Chance Visualizer</h4>
+            <p>
+              When implementing the fire modifiers, I of course needed to test them. Some variables will be easy to test, as they apply to everything in the scene like humidity. But others like range and wind are harder to test because the values
+              are different in every location. To make testing easier, I decided to create a grid of small objects around a burning object that I call the "visualizer". Instead of burning themselves, these objects will turn to
+              the color on a color gradient corresponding to their ignition chance. Red objects are the most likely to ignite, and blue objects are the least likely. I can also turn on and off any of the modifiers to see how they all work individually, or
+              combined with the other modifiers.
+            </p>
+            <figure>
+              <img src="../assets/img/portfolio/Visualizer.PNG" alt="Visualizer gradient showing burn chance near burning object" class="center">
+              <figcaption class="caption">Ignition chance of every object due to a combination of wind and range.</figcaption>
+            </figure>
+          </div>
+
+          <div class="portfolio-description">
+            <h4>Firefighting Tools</h4>
+            <p>
+              Finally there are the firefighting tools. There are three that I added, a fireline (FL), which cuts away all of the flammable objects in its path; a water
+              drop (WD), which extinguishes the fire through its path; and finally, the retardant drop (RD), which reduces the ignition chance of all of the objects in its area.
+              To use these, one of the tool UI button are clicked, then the player will be allowed click on 2 areas of the map creating a line. Any object intersecting this line, as well as a
+              given width away from it, has the corresponding tool's effect applied to it. An example of the tools in action can be found on my <a target="_blank" href="../ProjectFeed.html"><u>project feed</u></a>!
+              To make it easier to visualize, I added a violet cube that shows the area that these effects are happening after you place them. 
+            </p>
+            <figure>
+              <img src="../assets/img/portfolio/Fireline.PNG" alt="Screenshot of a violet debug cube showing cut fireline" class="center">
+              <figcaption class="caption">An example of creating a fireline, shown visually with a violet debug cube</figcaption>
+            </figure>
+          </div>
+
+          <div class="portfolio-description">
+            <h2>Conclusion</h2>
+            <p>
+              This is as far as I am going to take this project for the moment. The proof of concept is complete and I have learned a lot, the biggest "eureka" moment
+						  being when I decided to spend a little time creating the ignition chance visualizer, saving me a lot of time testing and adjusting the modifier
+						  variables. It also has the added benefit of being a good demonstration piece when showing other people how each of the modifier variables change the
+						  ignition chances. If I pick this project up again in the future, there are many things I would like to add, such as the fire going out after
+						  period of time, better user feedback when using firefighting tools, adding a backburn tool, and improving the fire visuals.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        Website Template by <a href="https://bootstrapmade.com/">BootstrapMade</a><br>
+        Astronaut Helmet Icon by <a href="https://www.flaticon.com/free-icons/astronaut-helmet" title="astronaut helmet icons">Creatype - Flaticon</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
 </html>

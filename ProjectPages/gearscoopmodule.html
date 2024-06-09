@@ -1,124 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
 
-		<title>Gear Scoop</title>
-		<meta name="description" content="Gear Scoop Robot Module Details">
-        <meta name="author" content="Donovan Magney">
-        <!-- 
-        Lavish HTML CSS Template
-        https://templatemo.com/tm-458-lavish
-        -->
-        
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-		<!-- animate -->
-		<link rel="stylesheet" href="../css/animate.min.css">
-		<!-- bootstrap -->
-		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<!-- font-awesome -->
-		<link rel="stylesheet" href="../css/font-awesome.min.css">
-		<!-- google font -->
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
-		<!-- fullpage -->
-		<link rel="stylesheet" href="../css/jquery.fullPage.css">
-		<!-- custom -->
-		<link rel="stylesheet" href="../css/projectpagestyle.css">
-	</head>
-	<body>
+  <title>Gear Scoop</title>
+  <meta content="To design and build a module that will give the robot the ability to transport and place gears" name="description">
+  <meta content="Gear, FIRST Robotics, FRC, Granite City Gearheads, 3244, 2017, Steamworks, Scoop, Module, Robot" name="keywords">
 
-	<div id="fullpage">
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
 
-		<div id="fullpage">
-			<!-- start home -->
-			<div id="home" class="section gearscoopmodule-bg">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8 wow fadeIn" data-wow-delay="0.0s">
-							<h1>Gear Scoop Robot Module</h1>
-							<h3>Objective</h3>
-							<p>To design and build a module that will give the robot the ability to transport and place gears</p>
-						</div>
-						<div class="col-md-2"></div>
-					</div>
-				</div>
-			</div>
-			<!-- end home -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-		<!-- start overview -->
-		<div id="overview" class="section">
-			<div class="container">
-				<div class="col-md-12 wow">
-					<h2>Overview</h2>
-				</div>
-				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-				<p>
-					The 2017 FIRST Robotics competition “STEAMworks”, involved shooting fuel (whiffle balls) into a tall goal as well
-					as grabing and placing gears on a springy peg. The gears are then pulled up by a human into an “airship” and used to
-					score points. Gears are delivered to the field from slots in the corners in an area called the “feeder station” and robots can only have possession of one gear at a time. I
-					was tasked with mentoring 2-3 students on the design and development of a mechanism to collect those gears
-					from the feeder station and place them on the peg.
-				</p>
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<figure>
-								<img src="../images/Airship.jpg" alt="Airship peg example" class="center">
-								<figcaption class="caption">Airship peg example</figcaption>
-							</figure>
-						</div>
-					</div>
-				</div>
-				</div>
-			</div>
-		</div>
-		<!-- end overview -->
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-		<!-- start finalproduct -->
-		<div id="finalproduct" class="section">
-			<div class="container">
-				<div class="col-md-12 wow">
-					<h2>Final Product</h2>
-				</div>
-				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-				<p>
-					The completed mechanism was dubbed the “gear scoop”. It features a clear polycarbonate chute to guide the
-					gear into the scoop after being dropped from the feeder. The chute has a cutout in the shape of the gear which
-					gives space for the peg to be inserted into any one of the openings of the gear. Once on the peg, the scoop will
-					lower which removes the gear from the scoop. This lowering ability was chosen over opening doors as it would
-					then allow the robot to pick up dropped gears from alliance members or the humans inside the airship. A
-					camera was also mounted with a 3D printed bracket behind the chute to assist the drivers in lining up the gear
-					on the peg. Due to it being mounted on the side of the robot, mecanum wheels were required to allow sideways
-					motion.
-				</p>
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<figure>
-								<img src="../images/GearScoop.jpg" alt="Empty Gear Scoop closeup" class="center">
-								<figcaption class="caption">Empty Gear Scoop closeup</figcaption>
-							</figure>
-						</div>
-					</div>
-				</div>
-				</div>
-			</div>
-		</div>
-		<!-- end finalproduct -->
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
 
-		<!-- start conclusion -->
-		<div id="conclusion" class="section">
-			<div class="container">
-				<div class="col-md-12 wow">
-					<h2>Conclusion</h2>
-				</div>
-				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-					<p>
-						The gear scoop performed its function much better
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="../assets/img/FlightSuitPhoto.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Donovan Magney</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://github.com/realdka13" class="github"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/donovanmagney/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.instagram.com/tomorrows_space_explorer/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="../index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="../index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="../index.html#analogastro" class="nav-link scrollto"><i class="bx bx-planet"></i> <span>Analog Astronaut</span></a></li>
+          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav>
+      <!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Gear Scoop</h2>
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li>Gear Scoop</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="../assets/img/portfolio/Gear_Scoop_Robot.jpg" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Other</li>
+                <li><strong>Client</strong>: Granite City Gearheads FIRST Robotics Team</li>
+                <li><strong>Project date</strong>: Jan 2017 - April 2017</li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>Project Objective</h2>
+              <p>
+                To design and build a module that will give the robot the ability to transport and place gears
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-description">
+            <h2>Overview</h2>
+            <p>
+              The 2017 FIRST Robotics competition “STEAMworks”, involved shooting fuel (whiffle balls) into a tall goal as well
+              as grabing and placing gears on a springy peg. The gears are then pulled up by a human into an “airship” and used to
+              score points. Gears are delivered to the field from slots in the corners in an area called the “feeder station” and robots can only have possession of one gear at a time. I
+              was tasked with mentoring 2-3 students on the design and development of a mechanism to collect those gears
+              from the feeder station and place them on the peg.
+            </p>
+            <figure>
+              <img src="../assets/img/portfolio/Airship.jpg" alt="Airship peg example" class="center">
+              <figcaption class="caption">Airship peg example</figcaption>
+            </figure>
+          </div>
+
+          <div class="portfolio-description">
+            <h2>Final Product</h2>
+            <p>
+              The completed mechanism was dubbed the “gear scoop”. It features a clear polycarbonate chute to guide the
+              gear into the scoop after being dropped from the feeder. The chute has a cutout in the shape of the gear which
+              gives space for the peg to be inserted into any one of the openings of the gear. Once on the peg, the scoop will
+              lower which removes the gear from the scoop. This lowering ability was chosen over opening doors as it would
+              then allow the robot to pick up dropped gears from alliance members or the humans inside the airship. A
+              camera was also mounted with a 3D printed bracket behind the chute to assist the drivers in lining up the gear
+              on the peg. Due to it being mounted on the side of the robot, mecanum wheels were required to allow sideways
+              motion.
+            </p>
+            <figure>
+              <img src="../assets/img/portfolio/GearScoop.jpg" alt="Empty Gear Scoop closeup" class="center">
+              <figcaption class="caption">Empty Gear Scoop closeup</figcaption>
+            </figure>
+          </div>
+
+          <div class="portfolio-description">
+            <h2>Conclusion</h2>
+            <p>
+              The gear scoop performed its function much better
 						than expected. The ability to pick up gears from the
 						floor was intended to be used up against walls,
 						either by the feeder or the airship. However, it was
@@ -128,51 +168,49 @@
 						scoring with fuel but focusing on gears turned out
 						to be the winning strategy during the competitions.		
 						The scoop allowed us to win 1st place at on off-season (unofficial) competition.
-					</p>
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<figure>
-									<img src="../images/GearScoopActionShot.jpg" alt="The robot after just having placed a gear on the airship peg" class="center">
-									<figcaption class="caption">The robot after just having placed a gear on the airship peg</figcaption>
-								</figure>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end conclusuon -->
+            </p>
+            <figure>
+              <img src="../assets/img/portfolio/GearScoopActionShot.jpg" alt="The robot after just having placed a gear on the airship peg" class="center">
+              <figcaption class="caption">The robot after just having placed a gear on the airship peg</figcaption>
+            </figure>
+          </div>
 
-		<!-- start footer -->
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 wow fadeIn" data-wow-delay="0.25s">
-						<ul class="social-icon">
-							<li><a href="https://www.linkedin.com/in/donovanmagney" target="_blank" class="fa fa-linkedin"></a></li>
-							<li><a href="https://github.com/realdka13" target="_blank" class="fa fa-github"></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- end footer -->
+        </div>
 
-	</div>
-		<!-- jQuery -->
-		<script src="../js/jquery.js"></script>
-		<!-- bootstrap -->
-		<script src="../js/bootstrap.min.js"></script>
-		<!-- fullpage -->
-		<script src="../js/jquery.fullPage.js"></script>
-		<!-- smoothScroll -->
-		<script src="../js/smoothscroll.js"></script>
-		<!-- wow -->
-		<script src="../js/wow.min.js"></script>
-		<!-- text rotater -->
-		<script src="../js/jquery.simple-text-rotator.js"></script>
-		<!-- custom -->
-		<script src="../js/custom.js"></script>
-	</body>
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        Website Template by <a href="https://bootstrapmade.com/">BootstrapMade</a><br>
+        Astronaut Helmet Icon by <a href="https://www.flaticon.com/free-icons/astronaut-helmet" title="astronaut helmet icons">Creatype - Flaticon</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
 </html>

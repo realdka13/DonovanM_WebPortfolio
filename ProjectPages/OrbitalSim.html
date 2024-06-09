@@ -1,171 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
 
-		<title>Space Sim</title>
-		<meta name="description" content="Space Sim Details">
-        <meta name="author" content="Donovan Magney">
-        <!-- 
-        Lavish HTML CSS Template
-        https://templatemo.com/tm-458-lavish
-        -->
-        
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-		<!-- animate -->
-		<link rel="stylesheet" href="../css/animate.min.css">
-		<!-- bootstrap -->
-		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<!-- font-awesome -->
-		<link rel="stylesheet" href="../css/font-awesome.min.css">
-		<!-- google font -->
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
-		<!-- fullpage -->
-		<link rel="stylesheet" href="../css/jquery.fullPage.css">
-		<!-- custom -->
-		<link rel="stylesheet" href="../css/projectpagestyle.css">
-	</head>
-	<body>
+  <title>Space Sim</title>
+  <meta content="Explore the application of using real world physics in a game engine" name="description">
+  <meta content="Orbit, Physics, Ellipse, Unity, Simulation, Planets, Gravitation, Game Engine, Space" name="keywords">
 
-	<div id="fullpage">
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
 
-		<div id="fullpage">
-			<!-- start home -->
-			<div id="home" class="section orbitalsim-bg">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8 wow fadeIn" data-wow-delay="0.0s">
-							<h1>Orbital Simulation</h1>
-							<h3>Objective</h3>
-							<p>Explore the application of using real world physics in a game engine</p>
-						</div>
-						<div class="col-md-2"></div>
-					</div>
-				</div>
-			</div>
-			<!-- end home -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-		<!-- start overview -->
-		<div id="overview" class="section">
-			<div class="container">
-				<div class="col-md-12 wow">
-					<h2>Overview</h2>
-				</div>
-				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-				<p>
-					I've always been fascinated by games like Universe Sandbox that utilize real life physics in a space enviroment. I've been wanting to learn how games like these actually implement real world physics equations into their games. 
-					One of my favorite physics equations is Newtons Law of Universal Gravitation. I decided to make a small orbital simulation project to explore implementing this equation in the game engine. I take it
-					a step further and also implement Keplarian orbits (ellipses) for a more rigid soloar system, which appear in games like Kerbal Space Program.
-				</div>
-			</div>
-		</div>
-		<!-- end overview -->
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-		<!-- start finalproduct -->
-		<div id="finalproduct" class="section">
-			<div class="container">
-				<div class="col-md-12 wow">
-					<h2>Final Product</h2>
-				</div>
-				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-					<h4>Newtonian Gravity</h4>
-					<p>
-						To start, all I need are a couple of bodies with a mass value, the distance between their centers, and a gravity constant.
-						It starts with a master script which at the start, will find all of the bodies on screen and store them in an object array. Each frame, it will then pass on this object array
-						to each body and tell the body to calculate the total force acting upon it, calculate its new acceleration, velocity, then finally move itself to
-						the proper position from that velocity. The objects now will move, but its difficult to place them in an orbit without some debug lines that will show their future paths.
-						I downloaded a script from Sebastian Lague (on YouTube) to display the path of the bodies in the editor. That was pretty much it for this portion.
-						The code for this part of the project can be found <a href="https://github.com/realdka13/SpaceSim/tree/main/Space_Sim/Space_Sim/Assets/Game%20Components/Celestial%20Motion/Newtons%20Gravitation/Scripts" target="__blank">here</a>.
-						The code is heavily borrowed from Sebastion, although edits have been made for my use case.
-						After implementing this, I notice that when placing small bodies around a much larger one that is not moving, they end up spiraling in the direction normal to the orbit.
-						This of course in analogous to what happens in real life, nothing is completely still, our sun moves as well and the orbits follow.
-					</p>
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<figure>
-									<img src="../images/NewtonsGravDemo.PNG" alt="Screenshot 3 newtonian bodies, 2 of them orbiting the 1st, with orbit lines visable" class="center">
-									<figcaption class="caption">Newtonian Orbits with Orbit Lines</figcaption>
-								</figure>
-							</div>
-						</div>
-					</div>
-					<h4>Keplarian Orbits</h4>
-					<p>
-						The problem with making a game strictly with Newtons Gravity is that over time, they will slowly drift away and are unpredictable in a game sense. Something could happen in the game
-						or the player plays so long that the drift may start being a problem. In <i>Kerbal Space Program</i>, they place all of their bodys on "rails", or predefined paths to avoid the previously mentioned issues.
-						Keplarian parameters can be used to define orbits. This also makes it really easy to change orbits to whatever I like at anytime. This is less realistic since it
-						only creates eliiptical orbits and does not take other bodies into account, or have the spiraling I mentioned earlier. The script also draws orbit lines like previously, but its much easier
-						since the body will always follow the same path relative to its reference body. Because of this, I was able to make optimizations by only calculating values that have changed since the previous frame.
-						This <a href="https://github.com/realdka13/SpaceSim/blob/main/Space_Sim/Space_Sim/Assets/Game%20Components/Celestial%20Motion/Ellipse%20Orbits/Scripts/FloatOrbit/OnRailsObject.cs" target="__blank">code </a>
-						was a bit more complicated, but mostly due to the math involved. 
-					</p>
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<figure>
-									<img src="../images/KelplarianOrbitDemo.PNG" alt="Screenshot 3 keplarian bodies, the 2nd orbiting the 1st, and the 3rd orbiting the second with orbit lines and properties visable" class="center">
-									<figcaption class="caption">Keplarian Orbits with Orbit Lines, and Orbit Variables Outlined</figcaption>
-								</figure>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end finalproduct -->
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
 
-		<!-- start conclusion -->
-		<div id="conclusion" class="section">
-			<div class="container">
-				<div class="col-md-12 wow">
-					<h2>Conclusion</h2>
-				</div>
-				<div class="col-md-6 col-xs-11 wow fadeInLeft" style="width: 100%;" data-wow-delay="0.25s">
-					<p>
-						From this project I learned that the it is not actually too difficult to use these real life equations (as long as you understand them mathmatically). The difficult part is knowing the inputs and outputs of the system.
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="../assets/img/FlightSuitPhoto.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Donovan Magney</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://github.com/realdka13" class="github"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/donovanmagney/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.instagram.com/tomorrows_space_explorer/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="../index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="../index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="../index.html#analogastro" class="nav-link scrollto"><i class="bx bx-planet"></i> <span>Analog Astronaut</span></a></li>
+          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav>
+      <!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Orbital Simulation</h2>
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li>Orbital Simulation</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="../assets/img/portfolio/SpaceSim.PNG" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Software</li>
+                <li><strong>Client</strong>: Personal</li>
+                <li><strong>Project date</strong>: Dec 2021 - Jan 2022</li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>Project Objective</h2>
+              <p>
+                Explore the application of using real world physics in a game engine
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-description">
+            <h2>Overview</h2>
+            <p>
+              I've always been fascinated by games like Universe Sandbox that utilize real life physics in a space enviroment. I've been wanting to learn how games like these actually implement real world physics equations into their games. 
+					    One of my favorite physics equations is Newtons Law of Universal Gravitation. I decided to make a small orbital simulation project to explore implementing this equation in the game engine. I take it
+					    a step further and also implement Keplarian orbits (ellipses) for a more rigid soloar system, which appear in games like Kerbal Space Program.
+            </p>
+          </div>
+
+          <div class="portfolio-description">
+            <h2>Final Product</h2>
+            <h4>Newtonian Gravity</h4>
+            <p>
+              To start, all I need are a couple of bodies with a mass value, the distance between their centers, and a gravity constant.
+              It starts with a master script which at the start, will find all of the bodies on screen and store them in an object array. Each frame, it will then pass on this object array
+              to each body and tell the body to calculate the total force acting upon it, calculate its new acceleration, velocity, then finally move itself to
+              the proper position from that velocity. The objects now will move, but its difficult to place them in an orbit without some debug lines that will show their future paths.
+              I downloaded a script from Sebastian Lague (on YouTube) to display the path of the bodies in the editor. That was pretty much it for this portion.
+              The code for this part of the project can be found <a href="https://github.com/realdka13/SpaceSim/tree/main/Space_Sim/Space_Sim/Assets/Game%20Components/Celestial%20Motion/Newtons%20Gravitation/Scripts" target="__blank">here</a>.
+              The code is heavily borrowed from Sebastion, although edits have been made for my use case.
+              After implementing this, I notice that when placing small bodies around a much larger one that is not moving, they end up spiraling in the direction normal to the orbit.
+              This of course in analogous to what happens in real life, nothing is completely still, our sun moves as well and the orbits follow.
+            </p>
+            <figure>
+              <img src="../assets/img/portfolio/NewtonsGravDemo.PNG" alt="Screenshot 3 newtonian bodies, 2 of them orbiting the 1st, with orbit lines visable" class="center">
+              <figcaption class="caption">Newtonian Orbits with Orbit Lines</figcaption>
+            </figure>
+          </div>
+
+          <div class="portfolio-description">
+            <h4>Keplarian Orbits</h4>
+            <p>
+              The problem with making a game strictly with Newtons Gravity is that over time, they will slowly drift away and are unpredictable in a game sense. Something could happen in the game
+              or the player plays so long that the drift may start being a problem. In <i>Kerbal Space Program</i>, they place all of their bodys on "rails", or predefined paths to avoid the previously mentioned issues.
+              Keplarian parameters can be used to define orbits. This also makes it really easy to change orbits to whatever I like at anytime. This is less realistic since it
+              only creates eliiptical orbits and does not take other bodies into account, or have the spiraling I mentioned earlier. The script also draws orbit lines like previously, but its much easier
+              since the body will always follow the same path relative to its reference body. Because of this, I was able to make optimizations by only calculating values that have changed since the previous frame.
+              This <a href="https://github.com/realdka13/SpaceSim/blob/main/Space_Sim/Space_Sim/Assets/Game%20Components/Celestial%20Motion/Ellipse%20Orbits/Scripts/FloatOrbit/OnRailsObject.cs" target="__blank">code </a>
+              was a bit more complicated, but mostly due to the math involved. 
+            </p>
+            <figure>
+              <img src="../assets/img/portfolio/KelplarianOrbitDemo.PNG" alt="Screenshot 3 keplarian bodies, the 2nd orbiting the 1st, and the 3rd orbiting the second with orbit lines and properties visable" class="center">
+              <figcaption class="caption">Keplarian Orbits with Orbit Lines, and Orbit Variables Outlined</figcaption>
+            </figure>
+          </div>
+
+          <div class="portfolio-description">
+            <h2>Conclusion</h2>
+            <p>
+              From this project I learned that the it is not actually too difficult to use these real life equations (as long as you understand them mathmatically). The difficult part is knowing the inputs and outputs of the system.
 						That is, theres no place to just "plug in" the equation to make it work. You must figure out how to gather all of the information you need for the equation from the objects in the scene, and then how to
 						apply those outputs back to the objects to get your desired behavior. The equation itself is a small part of the process. If this project were to continue, it would be interesting to add collision physics, like 
 						elastic and inelastic collisions, as well as object deformation. Then these objects would have another level of interaction between them. These could get quite complicated to implement so these will have to wait for a future expansion of this project.
-					</p>
-				</div>
-			</div>
-		</div>
-		<!-- end conclusuon -->
+            </p>
+          </div>
 
-		<!-- start footer -->
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 wow fadeIn" data-wow-delay="0.25s">
-						<ul class="social-icon">
-							<li><a href="https://www.linkedin.com/in/donovanmagney" target="_blank" class="fa fa-linkedin"></a></li>
-							<li><a href="https://github.com/realdka13" target="_blank" class="fa fa-github"></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- end footer -->
+        </div>
 
-	</div>
-		<!-- jQuery -->
-		<script src="../js/jquery.js"></script>
-		<!-- bootstrap -->
-		<script src="../js/bootstrap.min.js"></script>
-		<!-- fullpage -->
-		<script src="../js/jquery.fullPage.js"></script>
-		<!-- smoothScroll -->
-		<script src="../js/smoothscroll.js"></script>
-		<!-- wow -->
-		<script src="../js/wow.min.js"></script>
-		<!-- text rotater -->
-		<script src="../js/jquery.simple-text-rotator.js"></script>
-		<!-- custom -->
-		<script src="../js/custom.js"></script>
-	</body>
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        Website Template by <a href="https://bootstrapmade.com/">BootstrapMade</a><br>
+        Astronaut Helmet Icon by <a href="https://www.flaticon.com/free-icons/astronaut-helmet" title="astronaut helmet icons">Creatype - Flaticon</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
 </html>

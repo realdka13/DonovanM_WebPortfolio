@@ -534,6 +534,44 @@ section {
 # Portfolio
 --------------------------------------------------------------*/
 
+/*Start Project Feed*/
+.feed
+    {
+        max-width: 1000px;
+        margin: auto;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+/* Add a gray background color with some padding */
+  
+  /* Images */
+.feed .img
+    {
+        background-color: #000000;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+        max-width: 350px;
+    }
+
+.feed .vid
+    {
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+        max-width: 100%;
+        height: auto;
+    }
+  
+  /* Add a card effect for articles */
+.feed .card
+    {
+        background-color: rgb(245,248,253);
+        padding: 20px;
+        margin-top: 20px;
+    }
+/*End Project Feed*/
+
 figure
     {
         margin: 50px 50px;

@@ -118,7 +118,7 @@
             <div class="portfolio-description">
               <h2>Project Objective</h2>
               <p>
-                Redesign the control PCB to convert it from a PIC32 microcontroller to a STM32 microcontroller and add additional debugging features to improve the firmware development process.
+                Redesign the flight computer from using PIC32 microcontrollers to STM32 microcontrollers, and add additional debugging features to improve the firmware development process.
               </p>
             </div>
           </div>
@@ -126,7 +126,20 @@
           <div class="portfolio-description">
             <h2>Overview</h2>
             <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              The Universal Flight Computer (UFC) is a project on the University of Minnesota Rocket Team to develop a modular flight computer. Previously, the team would design a flight computer
+              that would consist of just a single printed circuit board (PCB). Using just a single PCB meant that anytime the team wanted to make a change to the flight computer,
+              the whole thing would have to be manufactured again. The UFC solves this by breaking up the flight computer into multiple PCBs, or cards, each with a specific function. The UFC has 4 "core" cards, these are:
+              <br>
+              <br>Power Card - Converts the 11.1V supplied by the power card into 5V and 3.3V rails to power the other cards.
+              <br>Host Card - Manages the data flow between the UFC cards
+              <br>Sensor Card - Collects data using a whole suite of sensors
+              <br>Radio Card - Transmits data from the UFC to the ground, as well has maintains GPS lock.
+              <br><br>
+              At the beginning of the 2023-2024 season, the leads on the avionics team (which included myself) decided to change from using PIC microcontrollers to STM microcontrollers to try and streamline
+              firmware development. This new iteration of the UFC is called simply "UFC2". I personally worked on the redesign of the Host Card PCB.
+              <br><br>
+              The new version of the Host Card will use the STM32H7 series microcontroller, needs two forms of data storage (primary and secondary), a buzzer and LEDs for debugging, and physical switches to
+              help ensure data reliability by preventing accidental erasure of data.
             </p>
             <figure>
               <img src="../assets/img/portfolio/HostCardHighLevel.png" alt="High level overview of Host Card" class="center">
@@ -137,7 +150,27 @@
           <div class="portfolio-description">
             <h2>Final Product</h2>
             <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              The final product is a 4 layer PCB with the following (main) components:
+              <br>
+              <br>STM32H735ZGT6 -- Microcontroller
+              <br>MT25QL512ABB8ESF-0SIT -- Flash Memory
+              <br>MEM2075-00-140-01-A -- SD Card Slot
+              <br>PS1440P02BT -- Buzzer
+              <br>CHS-04TA -- Quad Dip Switch
+              <br><br>
+              This microcontroller serves as the primary microcontroller for the whole UFC. It is the one responsible for moving data between cards. It does this by serving as the host 
+              on a shared SPI bus between all of the cards. Additionally, all of the cards share a I2C bus as a backup communication system. It utilizes a 25MHz crystal oscillator, internally
+              multiplied up to 550MHz (much faster than the PICs 16MHz!). Programming the STM is done through the BTB (board to board) connector which is a friction fit connector similar to
+              how PCIE or old game cartridges worked. This connector allows us to not have to use through hole components, making the PCB much cleaner and easier to solder. There's also secondary
+              "backup" connector on the board intended for use if the friction fit of the BTB connector wears out. However, due to the cost of these connectors, it is typically left
+              unsoldered unless necessary.
+              <br><br>
+              The flash memory can hold up to 512MBITs and serves as our primary means of data storage. The SD card serves as our secondary means. The dip switch is used to select flight mode, read mode,
+              or data erase. We wanted these to be small physical switches to reduce the likelihood of accidental erasure during or post flight. The buzzer and leds are also used to indicate
+              the current mode of the card as well as for debugging.
+              <br><br>
+              One of the big changes we made this year was to add header pins to all communication lines that we can attach a logic analyzer to. On the host card there are header pins for the flash and sd card pins.
+              This pins are placed on there own extrusions from the main board and are broken off before flight.
             </p>
             <figure>
               <img src="../assets/img/portfolio/HostCardScheme.PNG" alt="Host Card circuit schematic in Altium" class="center">
@@ -152,7 +185,10 @@
           <div class="portfolio-description">
             <h2>Conclusion</h2>
             <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              The new version of the host card was flown for the first time during the 2024 Spaceport America Cup. From a hardware standpoint, the card worked exactly as intended and survived the flight. However, there was
+              a firmware bug that caused the flash memory to overwrite itself once it runs out of space (usually after a few hours). This meant that while the rocket was on the ground waiting for recovery, the flight data got overwritten
+              repeatedely until it was completely unrecognizable. Despite this we are happy with the performance of the card and made much more progress on it in 1 year than we did in multiple years of the previous UFC version. This
+              card will be a much better foundation for future team members to build off of.
             </p>
             <figure>
               <img src="../assets/img/portfolio/FullUFC.jpg" alt="Running flight computer" class="center">

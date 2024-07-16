@@ -163,7 +163,7 @@
               multiplied up to 550MHz (much faster than the PICs 16MHz!). Programming the STM is done through the BTB (board to board) connector which is a friction fit connector similar to
               how PCIE or old game cartridges worked. This connector allows us to not have to use through hole components, making the PCB much cleaner and easier to solder. There's also secondary
               "backup" connector on the board intended for use if the friction fit of the BTB connector wears out. However, due to the cost of these connectors, it is typically left
-              unsoldered unless necessary.
+              unsoldered.
               <br><br>
               The flash memory can hold up to 512MBITs and serves as our primary means of data storage. The SD card serves as our secondary means. The dip switch is used to select flight mode, read mode,
               or data erase. We wanted these to be small physical switches to reduce the likelihood of accidental erasure during or post flight. The buzzer and leds are also used to indicate
@@ -186,8 +186,8 @@
             <h2>Conclusion</h2>
             <p>
               The new version of the host card was flown for the first time during the 2024 Spaceport America Cup. From a hardware standpoint, the card worked exactly as intended and survived the flight. However, there was
-              a firmware bug that caused the flash memory to overwrite itself once it runs out of space (usually after a few hours). This meant that while the rocket was on the ground waiting for recovery, the flight data got overwritten
-              repeatedely until it was completely unrecognizable. Despite this we are happy with the performance of the card and made much more progress on it in 1 year than we did in multiple years of the previous UFC version. This
+              a firmware bug that caused the flash memory to overwrite itself once it runs out of space (usually after a few hours). This meant that while the rocket was on the ground waiting for recovery, the flight data was repeatedly overwritten
+              until it was completely unrecognizable. Despite this, we are happy with the performance of the card and made much more progress on it in 1 year than we did in multiple years of the previous UFC version. This
               card will be a much better foundation for future team members to build off of.
             </p>
             <figure>

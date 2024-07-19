@@ -125,9 +125,10 @@
           <div class="portfolio-description">
             <h2>Overview</h2>
             <p>
-              One fundamental practice during Analog missions are the extra vehicular activities (EVAs), which are focused on getting the Analog Astronauts to perform several experiments an open and controlled environment,
-              getting accustomed to wearing heavy suits, and getting familiar with their tools. One of the suits that LunAres uses for EVAs is known as the PUMA suit, which has a ventilation
-              system for the analog astronaut to breathe comfortably and a CO2 sensor to measure the level of carbon dioxide that is occupying the volume within the helmet.
+              One fundamental practice during analog missions is the extra-vehicular activities (EVAs). These activities focus on getting analog astronauts to perform
+              various experiments in an open and controlled environment, helping them get accustomed to wearing heavy suits and familiarizing them with their tools.
+              One of the suits used for EVAs at LunAres is known as the PUMA suit, which features a ventilation system for comfortable breathing and a CO2 sensor to measure
+              the carbon dioxide levels inside the helmet.
             </p>
           </div>
 
@@ -136,9 +137,9 @@
             <h3>Airflow</h3>
             <h5><i>Problem</i></h5>
             <p>
-              During EVA 0, the crew noticed an issue with low airflow into Puma suit. During the EVA, the EVA Lead noticed they were breathing heavily even when idle, and the temperature inside the helmet would get uncomfortably hot. After the EVA,
-              the backpack was opened and it was discovered that the fan was not secured properly in the backpack, causing it to not be able to intake air efficiently. This also caused an additional problem of the air hose connector on the backpack
-              moving around significantly when trying to attach the air hose.
+              During my first EVA, the crew noticed an issue with low airflow into the PUMA suit. While wearing the suit, I observed that I was breathing heavily even when idle, and the temperature
+              inside the helmet would become uncomfortably hot. After the EVA, an inspection of the backpack revealed that the fan was not secured properly, preventing efficient air intake.
+              This also caused the air hose connector on the backpack to move around significantly when trying to attach the air hose.
             </p>
             <figure>
               <img style="width: 500px; height: auto;" src="../assets/img/portfolio/FanGap.PNG" alt="Problem gap between the fan and the backpack" class="center">
@@ -146,10 +147,10 @@
             </figure>
             <h5><i>Final Design</i></h5>
             <p>
-              The final design features a 2 piece mount. The first component we call the connector, which interfaces with the air hose and routes the fan exhaust into it, and the second which we call the funnel, because it funnels the air from the relatively
-              small hole on the backpack exterior to the larger hole on the fan. The connector features a long extrusion under the fan exhaust that allows a bolt to be installed which secures it to the sides of the backpack. The funnel is a funnel shaped piece
-              with drilled bolt holes to secure it to the backpack exterior, and separate holes to secure it to the fan. Separating the mounting holes means we were able to use much shorter screws that we had on hand and that the assembly could be remove form
-              the backpack without taking it apart.
+              The final design features a two-piece mount. The first component, called the connector, interfaces with the air hose and routes the fan exhaust into it. The second component,
+              known as the funnel, directs air from the relatively small hole on the backpack exterior to the larger hole on the fan. The connector includes a long extrusion under the fan exhaust
+              that allows for a bolt to be installed, securing it to the sides of the backpack. The funnel is a funnel-shaped piece with drilled bolt holes to secure it to both the backpack exterior and the fan.
+              By separating the mounting holes, we were able to use much shorter screws that we had on hand, and the assembly could be removed from the backpack without taking it apart.
             </p>
             <figure>
               <img style="width: 500px; height: auto;" src="../assets/img/portfolio/BackpackConnector.PNG" alt="Completed connector print" class="center">
@@ -167,16 +168,16 @@
             <h3>Wiring</h3>
             <h5><i>Problem</i></h5>
             <p>
-              While trying to solve the issue with the airflow, the team found that the internal wiring of the backpack was very difficult to understand, and most of it unsecured to the backpack itself.
-              This meant that in the process of debugging the airflow issue, we had to spend a couple hours just trying to learn and understand the current state of the wiring. This was amplified by an incomplete schematic.
-              It was also possible for the messy wiring to come loose due to its own weight and cause a failure if not properly secured.
+              While trying to solve the airflow issue, the team found that the internal wiring of the backpack was very difficult to understand, and most of it was unsecured to the backpack itself.
+              This meant that in the process of debugging the airflow problem, we had to spend several hours just trying to learn and understand the current state of the wiring. The situation was made more difficult by an incomplete schematic.
+              Additionally, the messy wiring could come loose due to its own weight, potentially causing a failure if not properly secured.
             </p>
             <h5><i>Final Design</i></h5>
             <p>
-              The final design utilizes velcro to secure large components and wire bundles. Electrical is used to electrically isolate the wires. Electrical tape ended up being used over heatshrink as it was easier to apply and remove, and was able to serve as its own label
-              (black for GND, red for VCC). Most individual components have a label applied, as well as a few important wires. The length of many wires were also cut down to only what is necessary. A USB hub was also
-              added later so that the backpack could power up to 4 USB devices. Currently those devices are the LEMs device (life support sensor readout), the helmet sensor, and the two LEDs on the front straps of the backpack. By recommendation
-              from a previous crew, the backpack also now has a charging switch. This switch cuts off power to the charging port to prevent accidental shorts during an EVA. This switch should be ON when charging, and OFF all other times.
+              The final design utilizes Velcro to secure large components and wire bundles, while electrical tape is used to electrically isolate the wires. Electrical tape was chosen over heat shrink tubing as it was easier to apply and remove,
+              and could serve as its own label (black for GND, red for VCC). Most individual components and a few important wires were labeled. The length of many wires was also reduced to only what was necessary. Additionally, a USB hub was added
+              to the backpack to power up to four USB devices. Currently, these devices include the LEMs device (life support sensor readout), the helmet sensor, and two LEDs on the front straps of the backpack. Based on a recommendation from a previous
+              crew, the backpack now also has a charging switch. This switch cuts off power to the charging port to prevent accidental shorts during an EVA. The switch should be ON when charging and OFF at all other times.
             </p>
             <figure>
               <img style="width: 500px; height: auto;" src="../assets/img/portfolio/PumaBackpack.PNG" alt="Cleaner backpack wiring" class="center">
@@ -194,9 +195,9 @@
             <h3>Helmet sensor</h3>
             <h5><i>Problem</i></h5>
             <p>
-              Wearing a helmet designed to hold in pressure also means that CO2 cannot escape. The backpack airflow is designed to bring in fresh air for the astronaut, and it is important to monitor
-              if that system is functioning correctly and has enough performance to keep the astronaut safe. A previous crew appears to have attempted to add the ability to measure CO2 and temperature inside the helmet, 
-              but ran into the problem of having to run a wire inside the helmet to power it. Due to it needing to hold pressure it of course doesn't have any holes that would easily allow wires to run through without modification.
+              Wearing a helmet designed to hold in pressure means that CO2 cannot escape. The backpack airflow system is designed to bring in fresh air for the astronaut, so it is important to monitor if that system is functioning correctly and has
+              enough performance to keep the astronaut safe. A previous crew appears to have attempted to add the ability to measure CO2 and temperature inside the helmet but ran into the problem of needing to run a wire inside the helmet to power the sensors.
+              Since the helmet needs to hold pressure, it doesn't have any holes that would easily allow wires to run through without modification.
             </p>
             <figure>
               <img style="width: 500px; height: auto;" src="../assets/img/portfolio/PumaHelmet.PNG" alt="Puma suit helmet" class="center">
